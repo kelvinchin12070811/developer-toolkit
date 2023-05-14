@@ -1,3 +1,32 @@
-<h1 class="text-purple-600">Hello World</h1>
-<button class="btn btn-primary">Click Me</button>
-<router-outlet></router-outlet>
+<nav class="navbar bg-base-200">
+  <div class="p-2 mt-[8px] lg:hidden">
+    <label for="sidebar-drawer" class="drawer-button cursor-pointer">
+      <i class="material-icons">menu</i>
+    </label>
+  </div>
+  <div class="flex-1">
+    <h1 class="font-bold text-3xl">Developer Toolkit</h1>
+  </div>
+  <ul>
+    <li>
+      <a href="https://www.google.com">
+        <i class="material-icons">warehouse</i>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div class="drawer drawer-mobile">
+  <input id="sidebar-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col items-center justify-center">
+    <!-- Page content here -->
+    <router-outlet></router-outlet>
+  </div>
+  <div class="drawer-side">
+    <label for="sidebar-drawer" class="drawer-overlay"></label>
+    <ul class="menu p-4 w-80 bg-base-300 text-base-content">
+      <!-- Sidebar content here -->
+      <li>Settings</li>
+    </ul>
+  </div>
+</div>

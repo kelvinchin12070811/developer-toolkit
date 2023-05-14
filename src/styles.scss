@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    min-height: 100vh;
+}
+
+app-root {
+    @apply inline-block h-screen w-full flex flex-col;
+}
