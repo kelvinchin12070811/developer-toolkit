@@ -1,10 +1,11 @@
 <nav class="navbar bg-base-200">
-  <div class="p-2 mt-[8px] lg:hidden">
-    <label for="sidebar-drawer" class="drawer-button cursor-pointer">
-      <i class="material-icons">menu</i>
+  <div class="p-2 lg:hidden">
+    <label for="sidebar-drawer" class="btn btn-ghost drawer-button">
+      <i class="material-icons text-3xl">menu</i>
     </label>
   </div>
   <div class="flex-1">
+    <i class="material-icons text-4xl pr-2">home_repair_service</i>
     <h1 class="font-bold text-3xl">Developer Toolkit</h1>
   </div>
   <ul>
@@ -26,8 +27,13 @@
     <label for="sidebar-drawer" class="drawer-overlay"></label>
     <ul class="menu w-80 bg-base-300 text-base-content">
       <!-- Sidebar content here -->
+      <li class="menu-title"><span>Generators</span></li>
       <li>
         <a><i class="material-icons">label_important</i> UUID</a>
+      </li>
+      <div class="divider"></div>
+      <li class="menu-title">
+        <span>Configurations</span>
       </li>
       <li class="bordered">
         <a><i class="material-icons">settings</i> Settings</a>
