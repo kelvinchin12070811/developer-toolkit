@@ -7,6 +7,13 @@ const routes: Routes = [
     loadComponent: () =>
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./pages/http-status/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
+  },
 ];
 
 @NgModule({
