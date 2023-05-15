@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -9,5 +10,11 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   imports: [RouterOutlet, RouterModule],
 })
 export class AppComponent {
+  titleService = inject(Title);
+
   title = 'developer-toolkit';
+
+  constructor() {
+    this.titleService.setTitle('Developer Toolkit');
+  }
 }
