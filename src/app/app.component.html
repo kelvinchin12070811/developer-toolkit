@@ -27,8 +27,15 @@
     <label for="sidebar-drawer" class="drawer-overlay"></label>
     <ul class="menu w-80 bg-base-300 text-base-content">
       <!-- Sidebar content here -->
-      <li class="menu bordered">
-        <a><i class="material-icons">home</i> Home</a>
+      <li
+        class="menu"
+        [routerLinkActive]="['bordered']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a [routerLink]="['/']">
+          <i class="material-icons">home</i>
+          Home
+        </a>
       </li>
 
       <div class="divider"></div>
