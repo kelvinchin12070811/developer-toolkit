@@ -1,0 +1,11 @@
+h1, div {
+    @apply text-center;
+}
+
+h1 {
+    @apply text-4xl mb-1;
+}
+
+.status-code {
+    @apply border-r-4 border-gray-500 pr-1;
+}

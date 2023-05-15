@@ -44,8 +44,10 @@
       <div class="divider"></div>
       <li class="menu-title"><span>Generators</span></li>
 
-      <li>
-        <a><i class="material-icons">label_important</i> UUID</a>
+      <li [routerLinkActive]="['bordered']">
+        <a [routerLink]="['/generators/uuid']">
+          <i class="material-icons">label_important</i> UUID
+        </a>
       </li>
 
       <div class="divider"></div>
