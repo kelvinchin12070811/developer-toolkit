@@ -1,0 +1,31 @@
+<!-- Sidebar content here -->
+<li
+  class="menu"
+  [routerLinkActive]="['bordered']"
+  [routerLinkActiveOptions]="{ exact: true }"
+>
+  <a [routerLink]="['/']">
+    <i class="material-icons">home</i>
+    Home
+  </a>
+</li>
+
+<div class="divider"></div>
+<li class="menu-title"><span>Generators</span></li>
+
+<li [routerLinkActive]="['bordered']">
+  <a [routerLink]="['/generators/uuid']">
+    <i class="material-icons">label_important</i> UUID
+  </a>
+</li>
+
+<div class="divider"></div>
+<li class="menu-title">
+  <span>Configurations</span>
+</li>
+
+<li [routerLinkActive]="['bordered']">
+  <a [routerLink]="['/settings']"
+    ><i class="material-icons">settings</i> Settings</a
+  >
+</li>
