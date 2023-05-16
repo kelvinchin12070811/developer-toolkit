@@ -55,8 +55,10 @@
         <span>Configurations</span>
       </li>
 
-      <li>
-        <a><i class="material-icons">settings</i> Settings</a>
+      <li [routerLinkActive]="['bordered']">
+        <a [routerLink]="['/settings']"
+          ><i class="material-icons">settings</i> Settings</a
+        >
       </li>
     </ul>
   </div>

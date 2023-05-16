@@ -8,6 +8,13 @@ const routes: Routes = [
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
+    path: 'settings',
+    loadComponent: () =>
+      import('./pages/settings/common/common.component').then(
+        (m) => m.CommonComponent
+      ),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./pages/http-status/not-found/not-found.component').then(
