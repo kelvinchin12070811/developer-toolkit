@@ -1,0 +1,11 @@
+.root-container {
+    @apply w-full md:w-[500px] ml-auto mr-auto;
+}
+
+.card {
+    @apply w-full bg-base-200;
+}
+
+.form-control {
+    @apply w-full;
+}
