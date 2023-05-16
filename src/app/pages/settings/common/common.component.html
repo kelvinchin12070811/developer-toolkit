@@ -5,12 +5,16 @@
 
       <div class="form-control">
         <label class="label">Colour Themes</label>
-        <select class="select select-bordered">
+        <select
+          class="select select-bordered"
+          [(ngModel)]="theme"
+          (change)="onThemeChanged()"
+        >
           <option disabled selected>Pick One</option>
-          <option>dracula</option>
-          <option>light</option>
-          <option>dark</option>
-          <option>retro</option>
+          <option value="dracula">Dracula</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="retro">Retro</option>
         </select>
       </div>
     </div>
