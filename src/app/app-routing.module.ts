@@ -8,6 +8,13 @@ const routes: Routes = [
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
+    path: 'generators/uuid',
+    loadComponent: () =>
+      import('./pages/generators/uuid/uuid.component').then(
+        (m) => m.UuidComponent
+      ),
+  },
+  {
     path: 'settings',
     loadComponent: () =>
       import('./pages/settings/common/common.component').then(
