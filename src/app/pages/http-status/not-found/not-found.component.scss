@@ -9,3 +9,11 @@ h1 {
 .status-code {
     @apply border-r-4 border-gray-500 pr-1;
 }
+
+.img-container {
+    @apply text-center grid place-items-center p-2;
+
+    img {
+        width: min(100%, 400px);
+    }
+}
