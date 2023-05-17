@@ -3,13 +3,33 @@
     <label class="label">
       <span class="label-text">UUID</span>
     </label>
-    <input type="text" class="input input-bordered" />
+    <input
+      type="text"
+      class="input input-bordered"
+      [ngModel]="getUUID()"
+      disabled
+    />
 
     <label class="label">
       <span class="label-text">GUID</span>
     </label>
-    <input type="text" class="input input-bordered" />
+    <input
+      type="text"
+      class="input input-bordered"
+      [ngModel]="getGUID()"
+      disabled
+    />
 
-    <input type="button" value="Generate" class="btn" />
+    <label class="label cursor-pointer justify-start">
+      <input
+        type="checkbox"
+        class="toggle"
+        [ngModel]="uppercased()"
+        (ngModelChange)="uppercased.set($event)"
+      />
+      <span class="label-text text-left">Uppercase</span>
+    </label>
+
+    <input type="button" value="Generate" class="btn" (click)="genUUID()" />
   </div>
 </main>
