@@ -7,7 +7,8 @@
         <label class="label">Colour Themes</label>
         <select
           class="select select-bordered"
-          [(ngModel)]="theme"
+          [ngModel]="theme()"
+          (ngModelChange)="theme.set($event)"
           (change)="onThemeChanged()"
         >
           <option disabled selected>Pick One</option>

@@ -12,11 +12,12 @@ import { ConfigService } from 'src/app/services/config.service';
 })
 export class CommonComponent {
   configService = inject(ConfigService);
-  theme: string =
-    localStorage.getItem('theme') ?? this.configService.getDefaultTheme();
+  theme = signal<string>(
+    localStorage.getItem('theme') ?? this.configService.getDefaultTheme()
+  );
 
   onThemeChanged() {
-    this.configService.setThemeToLocalStorage(this.theme);
+    this.configService.setThemeToLocalStorage(this.theme());
     this.configService.setTheme();
   }
 }
