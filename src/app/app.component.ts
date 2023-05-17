@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { HeaderComponent } from './common/header/header.component';
+import { ConfigService } from './services/config.service';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,15 @@ import { HeaderComponent } from './common/header/header.component';
 })
 export class AppComponent {
   titleService = inject(Title);
+  configService = inject(ConfigService);
 
   title = 'developer-toolkit';
 
   constructor() {
     this.titleService.setTitle('Developer Toolkit');
+  }
+
+  ngOnInit() {
+    this.configService.setTheme();
   }
 }

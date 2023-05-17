@@ -4,10 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ConfigService {
-  constructor() {
-    this.setTheme();
-  }
-
   getThemeFromLocalStorage() {
     return localStorage.getItem('theme') ?? this.getDefaultTheme();
   }
