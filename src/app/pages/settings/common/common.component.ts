@@ -1,6 +1,7 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
   selector: 'app-common',
@@ -10,18 +11,12 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./common.component.scss'],
 })
 export class CommonComponent {
-  theme: string = localStorage.getItem('theme') ?? 'light';
-
-  constructor() {
-    this.setTheme();
-  }
+  configService = inject(ConfigService);
+  theme: string =
+    localStorage.getItem('theme') ?? this.configService.getDefaultTheme();
 
   onThemeChanged() {
-    this.setTheme();
-    localStorage.setItem('theme', this.theme);
-  }
-
-  private setTheme() {
-    document.querySelector('html')?.setAttribute('data-theme', this.theme);
+    this.configService.setThemeToLocalStorage(this.theme);
+    this.configService.setTheme();
   }
 }
