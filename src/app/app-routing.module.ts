@@ -15,6 +15,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'generators/timestamp',
+    loadComponent: () =>
+      import('./pages/generators/timestamp/timestamp.component').then(
+        (m) => m.TimestampComponent
+      ),
+  },
+  {
     path: 'settings',
     loadComponent: () =>
       import('./pages/settings/common/common.component').then(
