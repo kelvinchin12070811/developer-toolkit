@@ -3,7 +3,8 @@
 }
 
 .form-control {
-    width: min(400px, 100%);
+    @apply bg-base-300 p-8;
+    width: min(500px, 100%);
 }
 
 .gen-btn {

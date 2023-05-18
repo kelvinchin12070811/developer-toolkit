@@ -1,14 +1,14 @@
 <app-header></app-header>
 
-<div class="drawer drawer-mobile max-lg:mt-2 max-lg:mb-2">
+<div class="drawer drawer-mobile">
   <input id="sidebar-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content flex flex-col items-stretch lg:justify-center">
+  <div class="drawer-content main-drawer-content">
     <!-- Page content here -->
     <router-outlet></router-outlet>
   </div>
   <div class="drawer-side">
     <label for="sidebar-drawer" class="drawer-overlay"></label>
-    <ul class="menu w-80 bg-base-300 text-base-content">
+    <ul class="menu text-base-content menu-container">
       <app-sidebar></app-sidebar>
     </ul>
   </div>
