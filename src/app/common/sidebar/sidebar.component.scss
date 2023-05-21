@@ -1,11 +1,13 @@
 .site-logo-container {
-    @apply hidden lg:flex p-3;
+    @apply hidden lg:flex p-[0.90rem];
 
     i {
-        @apply text-4xl pr-2;
+        @apply text-3xl pr-1;
+
+        margin-top: -2px;
     }
 
     h1 {
-        @apply font-bold text-3xl max-md:text-xl;
+        @apply font-bold text-2xl max-md:text-xl;
     }
 }
