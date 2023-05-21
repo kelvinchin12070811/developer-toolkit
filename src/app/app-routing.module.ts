@@ -22,6 +22,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'generators/char',
+    loadComponent: () =>
+      import('./pages/generators/char/char.component').then(
+        (m) => m.CharComponent
+      ),
+  },
+  {
     path: 'settings',
     loadComponent: () =>
       import('./pages/settings/common/common.component').then(

@@ -1,0 +1,17 @@
+.main-container {
+    @apply p-2 grid place-items-center;
+
+    .gen-card {
+        @apply bg-base-300;
+
+        width: min(500px, 100%);
+    }
+
+    .toggle {
+        @apply rounded-3xl mr-2;
+    }
+
+    .options-group {
+        @apply md:grid grid-cols-2 pt-2 pb-2;
+    }
+}
