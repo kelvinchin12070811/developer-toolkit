@@ -1,35 +1,36 @@
 <main>
   <div class="form-control card card-bordered">
-    <label class="label">
-      <span class="label-text">UUID</span>
-    </label>
-    <input
-      type="text"
-      class="input input-bordered"
-      [ngModel]="getUUID()"
-      disabled
-    />
+    <div class="card-body">
+      <h2 class="card-title">UUID Generator</h2>
 
-    <label class="label">
-      <span class="label-text">GUID</span>
-    </label>
-    <input
-      type="text"
-      class="input input-bordered"
-      [ngModel]="getGUID()"
-      disabled
-    />
-
-    <label class="label cursor-pointer justify-start">
+      <label class="label">
+        <span class="label-text">UUID</span>
+      </label>
       <input
-        type="checkbox"
-        class="toggle"
-        [ngModel]="uppercased()"
-        (ngModelChange)="uppercased.set($event)"
+        type="text"
+        class="input input-bordered"
+        [ngModel]="getUUID()"
+        disabled
       />
-      <span class="label-text text-left">Uppercase</span>
-    </label>
-
-    <input type="button" value="Generate" class="btn" (click)="genUUID()" />
+      <label class="label">
+        <span class="label-text">GUID</span>
+      </label>
+      <input
+        type="text"
+        class="input input-bordered"
+        [ngModel]="getGUID()"
+        disabled
+      />
+      <label class="label cursor-pointer justify-start">
+        <input
+          type="checkbox"
+          class="toggle"
+          [ngModel]="uppercased()"
+          (ngModelChange)="uppercased.set($event)"
+        />
+        <span class="label-text text-left">Uppercase</span>
+      </label>
+      <input type="button" value="Generate" class="btn" (click)="genUUID()" />
+    </div>
   </div>
 </main>

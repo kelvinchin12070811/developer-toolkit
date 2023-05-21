@@ -1,10 +1,11 @@
-<app-header></app-header>
-
 <div class="drawer drawer-mobile">
   <input id="sidebar-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content main-drawer-content">
-    <!-- Page content here -->
-    <router-outlet></router-outlet>
+  <div class="drawer-content">
+    <app-header></app-header>
+    <div class="main-drawer-content">
+      <!-- Page content here -->
+      <router-outlet></router-outlet>
+    </div>
   </div>
   <div class="drawer-side">
     <label for="sidebar-drawer" class="drawer-overlay"></label>

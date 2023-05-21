@@ -15,7 +15,7 @@
 }
 
 .site-logo-container {
-    @apply flex-1;
+    @apply flex-1 lg:opacity-0;
 
     i {
         @apply text-4xl pr-2;

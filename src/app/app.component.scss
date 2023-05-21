@@ -1,5 +1,5 @@
 .main-drawer-content {
-    @apply flex flex-col items-stretch lg:justify-center max-lg:mt-3 max-lg:mb-3;
+    @apply flex flex-col items-stretch lg:min-h-full lg:justify-center max-lg:mt-3 max-lg:mb-3;
 }
 
 .menu-container {

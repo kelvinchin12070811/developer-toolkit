@@ -1,28 +1,30 @@
 <main class="main-container">
   <div class="form-control card card-bordered">
-    <label class="label">
-      <span class="label-text">Timestamp</span>
-    </label>
-    <input type="text" class="input" [ngModel]="timestamp()" disabled />
+    <div class="card-body">
+      <h2 class="card-title">Timestamp Generator</h2>
 
-    <label class="label">
-      <span class="label-text">Type</span>
-    </label>
-    <select
-      class="select select-bordered"
-      [ngModel]="type()"
-      (ngModelChange)="type.set($event)"
-    >
-      <option value="iso8601" selected>ISO8601</option>
-      <option value="iso8601-no-separator">ISO8601 Without Separator</option>
-      <option value="unix">Unix Timestamp</option>
-    </select>
-
-    <input
-      type="button"
-      class="btn gen-btn"
-      value="Generate"
-      (click)="generateTimestamp()"
-    />
+      <label class="label">
+        <span class="label-text">Timestamp</span>
+      </label>
+      <input type="text" class="input" [ngModel]="timestamp()" disabled />
+      <label class="label">
+        <span class="label-text">Type</span>
+      </label>
+      <select
+        class="select select-bordered"
+        [ngModel]="type()"
+        (ngModelChange)="type.set($event)"
+      >
+        <option value="iso8601" selected>ISO8601</option>
+        <option value="iso8601-no-separator">ISO8601 Without Separator</option>
+        <option value="unix">Unix Timestamp</option>
+      </select>
+      <input
+        type="button"
+        class="btn gen-btn"
+        value="Generate"
+        (click)="generateTimestamp()"
+      />
+    </div>
   </div>
 </main>

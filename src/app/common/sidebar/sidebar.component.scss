@@ -1,0 +1,11 @@
+.site-logo-container {
+    @apply hidden lg:flex p-3;
+
+    i {
+        @apply text-4xl pr-2;
+    }
+
+    h1 {
+        @apply font-bold text-3xl max-md:text-xl;
+    }
+}
