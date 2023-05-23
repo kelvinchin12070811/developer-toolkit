@@ -7,31 +7,61 @@
         <label class="label">
           <span class="label-text">Characters</span>
         </label>
-        <input type="text" class="input input-bordered" disabled />
+        <input
+          type="text"
+          class="input input-bordered"
+          disabled
+          [ngModel]="result()"
+        />
 
         <div class="options-group">
           <label class="label cursor-pointer justify-start">
-            <input type="checkbox" class="toggle" />
+            <input
+              type="checkbox"
+              class="toggle"
+              [ngModel]="genUpperCase()"
+              (ngModelChange)="genUpperCase.set($event)"
+            />
             <span class="label-text text-left">Uppercase</span>
           </label>
 
           <label class="label cursor-pointer justify-start">
-            <input type="checkbox" class="toggle" />
+            <input
+              type="checkbox"
+              class="toggle"
+              [ngModel]="genLowerCase()"
+              (ngModelChange)="genLowerCase.set($event)"
+            />
             <span class="label-text text-left">Lowercase</span>
           </label>
 
           <label class="label cursor-pointer justify-start">
-            <input type="checkbox" class="toggle" />
+            <input
+              type="checkbox"
+              class="toggle"
+              [ngModel]="genNumbers()"
+              (ngModelChange)="genNumbers.set($event)"
+            />
             <span class="label-text text-left">Number</span>
           </label>
 
           <label class="label cursor-pointer justify-start">
-            <input type="checkbox" class="toggle" />
+            <input
+              type="checkbox"
+              class="toggle"
+              [ngModel]="genSymbols()"
+              (ngModelChange)="genSymbols.set($event)"
+            />
             <span class="label-text text-left">Symbol</span>
           </label>
         </div>
 
-        <input type="button" value="Generate" class="btn" />
+        <input
+          type="button"
+          value="Generate"
+          class="btn"
+          (click)="generate()"
+        />
       </div>
     </div>
   </section>
