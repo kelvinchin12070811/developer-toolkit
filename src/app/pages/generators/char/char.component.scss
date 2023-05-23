@@ -1,33 +1,29 @@
-.main-container {
-    @apply p-2 grid place-items-center;
+.gen-card {
+    @apply bg-base-300;
 
-    .gen-card {
-        @apply bg-base-300;
+    width: min(500px, 100%);
+}
 
-        width: min(500px, 100%);
-    }
+.toggle {
+    @apply rounded-3xl mr-2;
+}
 
-    .toggle {
-        @apply rounded-3xl mr-2;
-    }
+.options-group {
+    @apply md:grid grid-cols-2 pb-2;
+}
 
-    .options-group {
-        @apply md:grid grid-cols-2 pb-2;
-    }
+.length-select {
+    @apply mb-2;
 
-    .length-select {
-        @apply mb-2;
+    .inner-container {
+        @apply grid grid-cols-4;
 
-        .inner-container {
-            @apply grid grid-cols-4;
+        input {
+            @apply col-span-3;
+        }
 
-            input {
-                @apply col-span-3;
-            }
-
-            div {
-                @apply text-right;
-            }
+        div {
+            @apply text-right;
         }
     }
 }

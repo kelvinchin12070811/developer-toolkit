@@ -1,13 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
 
 const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
 @Component({
   selector: 'app-char',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ContainerCardComponent],
   templateUrl: './char.component.html',
   styleUrls: ['./char.component.scss'],
 })
