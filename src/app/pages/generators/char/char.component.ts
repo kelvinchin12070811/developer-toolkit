@@ -13,11 +13,15 @@ const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 })
 export class CharComponent {
   genUpperCase = signal(true);
-  genLowerCase = signal(false);
-  genNumbers = signal(false);
+  genLowerCase = signal(true);
+  genNumbers = signal(true);
   genSymbols = signal(false);
   length = signal(10);
   result = signal('');
+
+  ngOnInit() {
+    this.generate();
+  }
 
   generate() {
     let newResult = '';

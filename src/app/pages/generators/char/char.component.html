@@ -14,6 +14,26 @@
           [ngModel]="result()"
         />
 
+        <div class="length-select">
+          <label class="label">
+            <span class="label-text text-left">Length</span>
+          </label>
+          <div class="inner-container">
+            <input
+              type="range"
+              class="range"
+              min="0"
+              max="255"
+              [ngModel]="length()"
+              (ngModelChange)="length.set($event)"
+            />
+            <div>{{ length() }}</div>
+          </div>
+        </div>
+
+        <label class="label">
+          <span class="label-text"> Options </span>
+        </label>
         <div class="options-group">
           <label class="label cursor-pointer justify-start">
             <input
@@ -54,23 +74,6 @@
             />
             <span class="label-text text-left">Symbol</span>
           </label>
-        </div>
-
-        <div class="length-select">
-          <label class="label">
-            <span class="label-text text-left">Length</span>
-          </label>
-          <div class="inner-container">
-            <input
-              type="range"
-              class="range"
-              min="0"
-              max="255"
-              [ngModel]="length()"
-              (ngModelChange)="length.set($event)"
-            />
-            <div>{{ length() }}</div>
-          </div>
         </div>
 
         <input
