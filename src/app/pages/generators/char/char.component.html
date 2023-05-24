@@ -1,4 +1,4 @@
-<app-container-card title="Character Generator">
+<app-generator-card title="Character Generator" (onGenerate)="generate()">
   <div class="form-control">
     <label class="label">
       <span class="label-text">Characters</span>
@@ -71,7 +71,5 @@
         <span class="label-text text-left">Symbol</span>
       </label>
     </div>
-
-    <input type="button" value="Generate" class="btn" (click)="generate()" />
   </div>
-</app-container-card>
+</app-generator-card>
