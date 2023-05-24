@@ -1,3 +1,7 @@
 .toggle {
     @apply rounded-3xl mr-2;
 }
+
+.uuid-options {
+    @apply grid grid-cols-2;
+}

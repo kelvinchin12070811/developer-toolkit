@@ -14,6 +14,7 @@ import { GeneratorCardComponent } from 'src/app/common/generator-card/generator-
 export class UuidComponent {
   uuid = signal<string>('');
   uppercased = signal<boolean>(false);
+  guidStyle = signal<boolean>(false);
 
   genUUID() {
     this.uuid.set(uuidv4());
@@ -27,5 +28,9 @@ export class UuidComponent {
   getGUID() {
     const uuid = this.getUUID();
     return uuid === '' ? '' : `{${uuid}}`;
+  }
+
+  getGeneratedUUID() {
+    return this.guidStyle() ? this.getGUID() : this.getUUID();
   }
 }

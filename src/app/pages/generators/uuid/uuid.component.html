@@ -5,25 +5,27 @@
   <input
     type="text"
     class="input input-bordered"
-    [ngModel]="getUUID()"
+    [ngModel]="getGeneratedUUID()"
     disabled
   />
-  <label class="label">
-    <span class="label-text">GUID</span>
-  </label>
-  <input
-    type="text"
-    class="input input-bordered"
-    [ngModel]="getGUID()"
-    disabled
-  />
-  <label class="label cursor-pointer justify-start">
-    <input
-      type="checkbox"
-      class="toggle"
-      [ngModel]="uppercased()"
-      (ngModelChange)="uppercased.set($event)"
-    />
-    <span class="label-text text-left">Uppercase</span>
-  </label>
+  <section class="uuid-options">
+    <label class="label cursor-pointer justify-start">
+      <input
+        type="checkbox"
+        class="toggle"
+        [ngModel]="uppercased()"
+        (ngModelChange)="uppercased.set($event)"
+      />
+      <span class="label-text text-left">Uppercase</span>
+    </label>
+    <label class="label cursor-pointer justify-start">
+      <input
+        type="checkbox"
+        class="toggle"
+        [ngModel]="guidStyle()"
+        (ngModelChange)="guidStyle.set($event)"
+      />
+      <span class="label-text text-left">GUID style (with bracket)</span>
+    </label>
+  </section>
 </app-generator-card>
