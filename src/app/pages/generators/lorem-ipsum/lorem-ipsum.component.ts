@@ -29,7 +29,7 @@ export class LoremIpsumComponent {
         return this.form.get('size');
     }
 
-    print() {
+    onSubmit() {
         if (!this.form.valid) return;
 
         const values = this.form.value;
