@@ -2,12 +2,12 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { v4 as uuidv4 } from 'uuid';
 import { FormsModule } from '@angular/forms';
-import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
+import { GeneratorCardComponent } from 'src/app/common/generator-card/generator-card.component';
 
 @Component({
   selector: 'app-uuid',
   standalone: true,
-  imports: [CommonModule, FormsModule, ContainerCardComponent],
+  imports: [CommonModule, FormsModule, GeneratorCardComponent],
   templateUrl: './uuid.component.html',
   styleUrls: ['./uuid.component.scss'],
 })

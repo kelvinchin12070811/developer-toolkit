@@ -1,0 +1,13 @@
+<app-container-card>
+  <ng-content></ng-content>
+
+  <section class="action-btn-group">
+    <input type="button" value="Copy" class="btn" />
+    <input
+      type="button"
+      value="Generate"
+      class="btn btn-primary"
+      (click)="emitOnGenerate()"
+    />
+  </section>
+</app-container-card>

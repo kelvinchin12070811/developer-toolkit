@@ -1,4 +1,4 @@
-<app-container-card title="UUID Generator">
+<app-generator-card title="UUID Generator" (onGenerate)="genUUID()">
   <label class="label">
     <span class="label-text">UUID</span>
   </label>
@@ -26,5 +26,4 @@
     />
     <span class="label-text text-left">Uppercase</span>
   </label>
-  <input type="button" value="Generate" class="btn" (click)="genUUID()" />
-</app-container-card>
+</app-generator-card>
