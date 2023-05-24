@@ -1,7 +1,3 @@
-.main-container {
-    @apply w-full grid place-items-center p-2;
-}
-
 .form-control {
     @apply bg-base-300;
     width: min(500px, 100%);
@@ -9,4 +5,8 @@
 
 .gen-btn {
     @apply mt-3;
+}
+
+.separator {
+    @apply mb-2;
 }

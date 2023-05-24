@@ -1,0 +1,17 @@
+.field-container {
+    input, select {
+        @apply w-full;
+    }
+
+    .separator {
+        @apply mb-2;
+    }
+}
+
+textarea {
+    @apply w-full;
+}
+
+.valid-error {
+    @apply text-error;
+}

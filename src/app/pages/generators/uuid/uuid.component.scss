@@ -1,12 +1,7 @@
-main {
-    @apply p-2 grid place-items-center w-full;
+.toggle {
+    @apply rounded-3xl mr-2;
+}
 
-    .form-control {
-        @apply bg-base-300;
-        width: min(500px, 100%);
-    }
-
-    .toggle {
-        @apply rounded-3xl mr-2;
-    }
+.uuid-options {
+    @apply grid grid-cols-2;
 }

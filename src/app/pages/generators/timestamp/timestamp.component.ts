@@ -2,11 +2,13 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import * as dayjs from 'dayjs';
 import { FormsModule } from '@angular/forms';
+import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
+import { GeneratorCardComponent } from 'src/app/common/generator-card/generator-card.component';
 
 @Component({
   selector: 'app-timestamp',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, GeneratorCardComponent],
   templateUrl: './timestamp.component.html',
   styleUrls: ['./timestamp.component.scss'],
 })

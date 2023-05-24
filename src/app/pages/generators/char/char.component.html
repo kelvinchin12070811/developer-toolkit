@@ -1,0 +1,79 @@
+<app-generator-card
+  title="Character Generator"
+  (onGenerate)="generate()"
+  [toCopy]="result()"
+>
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Characters</span>
+    </label>
+    <input
+      type="text"
+      class="input input-bordered"
+      disabled
+      [ngModel]="result()"
+    />
+
+    <div class="length-select">
+      <label class="label">
+        <span class="label-text text-left">Length</span>
+      </label>
+      <div class="inner-container">
+        <input
+          type="range"
+          class="range"
+          min="0"
+          max="255"
+          [ngModel]="length()"
+          (ngModelChange)="length.set($event)"
+        />
+        <div>{{ length() }}</div>
+      </div>
+    </div>
+
+    <label class="label">
+      <span class="label-text"> Options </span>
+    </label>
+    <div class="options-group">
+      <label class="label cursor-pointer justify-start">
+        <input
+          type="checkbox"
+          class="toggle"
+          [ngModel]="genUpperCase()"
+          (ngModelChange)="genUpperCase.set($event)"
+        />
+        <span class="label-text text-left">Uppercase</span>
+      </label>
+
+      <label class="label cursor-pointer justify-start">
+        <input
+          type="checkbox"
+          class="toggle"
+          [ngModel]="genLowerCase()"
+          (ngModelChange)="genLowerCase.set($event)"
+        />
+        <span class="label-text text-left">Lowercase</span>
+      </label>
+
+      <label class="label cursor-pointer justify-start">
+        <input
+          type="checkbox"
+          class="toggle"
+          [ngModel]="genNumbers()"
+          (ngModelChange)="genNumbers.set($event)"
+        />
+        <span class="label-text text-left">Number</span>
+      </label>
+
+      <label class="label cursor-pointer justify-start">
+        <input
+          type="checkbox"
+          class="toggle"
+          [ngModel]="genSymbols()"
+          (ngModelChange)="genSymbols.set($event)"
+        />
+        <span class="label-text text-left">Symbol</span>
+      </label>
+    </div>
+  </div>
+</app-generator-card>

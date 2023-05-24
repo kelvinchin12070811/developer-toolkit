@@ -22,6 +22,20 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'generators/char',
+    loadComponent: () =>
+      import('./pages/generators/char/char.component').then(
+        (m) => m.CharComponent
+      ),
+  },
+  {
+    path: 'generators/lorem-ipsum',
+    loadComponent: () =>
+      import('./pages/generators/lorem-ipsum/lorem-ipsum.component').then(
+        (m) => m.LoremIpsumComponent
+      ),
+  },
+  {
     path: 'settings',
     loadComponent: () =>
       import('./pages/settings/common/common.component').then(

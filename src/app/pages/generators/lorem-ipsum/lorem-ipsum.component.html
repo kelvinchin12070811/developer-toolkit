@@ -1,0 +1,28 @@
+<app-generator-card title="Lorem Ipsum Generator" (onGenerate)="onSubmit()" [toCopy]="result()">
+  <label class="label">
+    <span class="label-text">Result</span>
+  </label>
+  <textarea rows="4" class="textarea" [ngModel]="result()" disabled></textarea>
+  <form [formGroup]="form">
+    <div class="field-container">
+      <label class="label"><span class="label-text">Size</span></label>
+      <input type="number" class="input" formControlName="size" min="1" />
+      <div
+        class="valid-error"
+        *ngIf="sizeField?.invalid && (sizeField?.dirty || sizeField?.touched)"
+      >
+        <ng-container *ngIf="sizeField?.errors?.['required']">Size is required</ng-container>
+        <ng-container *ngIf="sizeField?.errors?.['min']">Size must not lower than 1</ng-container>
+      </div>
+    </div>
+    <div class="field-container">
+      <label class="label"><span class="label-text">Type</span></label>
+      <select class="select" formControlName="type">
+        <option value="paragraph">Paragraph</option>
+        <option value="sentence">Sentence</option>
+        <option value="word">Word</option>
+      </select>
+    </div>
+  </form>
+  <div class="separator"></div>
+</app-generator-card>

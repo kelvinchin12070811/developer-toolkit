@@ -1,36 +1,35 @@
-<main>
-  <div class="form-control card card-bordered">
-    <div class="card-body">
-      <h2 class="card-title">UUID Generator</h2>
-
-      <label class="label">
-        <span class="label-text">UUID</span>
-      </label>
+<app-generator-card
+  title="UUID Generator"
+  (onGenerate)="genUUID()"
+  [toCopy]="getGeneratedUUID()"
+>
+  <label class="label">
+    <span class="label-text">UUID</span>
+  </label>
+  <input
+    type="text"
+    class="input input-bordered"
+    [ngModel]="getGeneratedUUID()"
+    disabled
+  />
+  <section class="uuid-options">
+    <label class="label cursor-pointer justify-start">
       <input
-        type="text"
-        class="input input-bordered"
-        [ngModel]="getUUID()"
-        disabled
+        type="checkbox"
+        class="toggle"
+        [ngModel]="uppercased()"
+        (ngModelChange)="uppercased.set($event)"
       />
-      <label class="label">
-        <span class="label-text">GUID</span>
-      </label>
+      <span class="label-text text-left">Uppercase</span>
+    </label>
+    <label class="label cursor-pointer justify-start">
       <input
-        type="text"
-        class="input input-bordered"
-        [ngModel]="getGUID()"
-        disabled
+        type="checkbox"
+        class="toggle"
+        [ngModel]="guidStyle()"
+        (ngModelChange)="guidStyle.set($event)"
       />
-      <label class="label cursor-pointer justify-start">
-        <input
-          type="checkbox"
-          class="toggle"
-          [ngModel]="uppercased()"
-          (ngModelChange)="uppercased.set($event)"
-        />
-        <span class="label-text text-left">Uppercase</span>
-      </label>
-      <input type="button" value="Generate" class="btn" (click)="genUUID()" />
-    </div>
-  </div>
-</main>
+      <span class="label-text text-left">GUID style (with bracket)</span>
+    </label>
+  </section>
+</app-generator-card>
