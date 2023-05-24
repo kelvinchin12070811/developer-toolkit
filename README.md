@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 As this project use yarn pnp, configuring the editor to support the special file system of yarn pnp might be required,
-see (Editor SDKs)[https://next.yarnpkg.com/getting-started/editor-sdks] on yarn documentation.
+see [Editor SDKs](https://next.yarnpkg.com/getting-started/editor-sdks) on yarn documentation.
 
 ## Code scaffolding
 
