@@ -1,4 +1,8 @@
-<app-generator-card title="UUID Generator" (onGenerate)="genUUID()">
+<app-generator-card
+  title="UUID Generator"
+  (onGenerate)="genUUID()"
+  [toCopy]="getGeneratedUUID()"
+>
   <label class="label">
     <span class="label-text">UUID</span>
   </label>

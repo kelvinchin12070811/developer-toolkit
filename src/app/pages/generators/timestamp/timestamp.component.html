@@ -1,6 +1,7 @@
 <app-generator-card
   title="Timestamp Generator"
   (onGenerate)="generateTimestamp()"
+  [toCopy]="timestamp()"
 >
   <label class="label">
     <span class="label-text">Timestamp</span>

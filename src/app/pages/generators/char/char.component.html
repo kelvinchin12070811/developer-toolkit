@@ -1,4 +1,8 @@
-<app-generator-card title="Character Generator" (onGenerate)="generate()">
+<app-generator-card
+  title="Character Generator"
+  (onGenerate)="generate()"
+  [toCopy]="result()"
+>
   <div class="form-control">
     <label class="label">
       <span class="label-text">Characters</span>
