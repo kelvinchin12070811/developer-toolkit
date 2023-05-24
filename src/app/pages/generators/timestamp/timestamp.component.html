@@ -1,4 +1,7 @@
-<app-container-card title="Timestamp Generator">
+<app-generator-card
+  title="Timestamp Generator"
+  (onGenerate)="generateTimestamp()"
+>
   <label class="label">
     <span class="label-text">Timestamp</span>
   </label>
@@ -15,10 +18,6 @@
     <option value="iso8601-no-separator">ISO8601 Without Separator</option>
     <option value="unix">Unix Timestamp</option>
   </select>
-  <input
-    type="button"
-    class="btn gen-btn"
-    value="Generate"
-    (click)="generateTimestamp()"
-  />
-</app-container-card>
+
+  <div class="separator"></div>
+</app-generator-card>
