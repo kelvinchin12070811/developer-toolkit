@@ -1,1 +1,19 @@
-<p>lorem-ipsum works!</p>
+<app-generator-card title="Lorem Ipsum Generator">
+  <label class="label">
+    <span class="label-text">Result</span>
+  </label>
+  <textarea rows="4" class="textarea" disabled></textarea>
+  <div class="field-container">
+    <label class="label"><span class="label-text">Size</span></label>
+    <input type="text" class="input" />
+  </div>
+  <div class="field-container">
+    <label class="label"><span class="label-text">Type</span></label>
+    <select class="select">
+      <option value="paragraph">Paragraph</option>
+      <option value="sentence">Sentence</option>
+      <option value="word">Word</option>
+    </select>
+  </div>
+  <div class="separator"></div>
+</app-generator-card>
