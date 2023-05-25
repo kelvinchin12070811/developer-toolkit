@@ -1,24 +1,35 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class ConfigService {
-  getThemeFromLocalStorage() {
-    return localStorage.getItem('theme') ?? this.getDefaultTheme();
-  }
+    platformID = inject(PLATFORM_ID);
 
-  getDefaultTheme() {
-    return document.querySelector('html')?.getAttribute('data-theme') ?? 'dark';
-  }
+    getThemeFromLocalStorage() {
+        if (!isPlatformBrowser(this.platformID)) return '';
 
-  setThemeToLocalStorage(theme: string) {
-    localStorage.setItem('theme', theme);
-  }
+        return localStorage.getItem('theme') ?? this.getDefaultTheme();
+    }
 
-  setTheme() {
-    const theme = this.getThemeFromLocalStorage();
-    const html = document.querySelector('html');
-    html?.setAttribute('data-theme', theme);
-  }
+    getDefaultTheme() {
+        if (!isPlatformBrowser(this.platformID)) return '';
+
+        return document.querySelector('html')?.getAttribute('data-theme') ?? 'dark';
+    }
+
+    setThemeToLocalStorage(theme: string) {
+        if (!isPlatformBrowser(this.platformID)) return;
+
+        localStorage.setItem('theme', theme);
+    }
+
+    setTheme() {
+        if (!isPlatformBrowser(this.platformID)) return;
+
+        const theme = this.getThemeFromLocalStorage();
+        const html = document.querySelector('html');
+        html?.setAttribute('data-theme', theme);
+    }
 }
