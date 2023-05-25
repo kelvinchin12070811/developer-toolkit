@@ -5,10 +5,9 @@
     <input type="button" value="Copy" class="btn" (click)="onCopy()" />
     <input type="button" value="Generate" class="btn btn-primary" (click)="emitOnGenerate()" />
   </section>
-</app-container-card>
-
-<div class="toast toast-bottom" [ngClass]="{'hidden': !isCopiedToastVisible()}">
-  <div class="alert alert-info">
-    <div><span>Copied to clipboard</span></div>
+  <div class="toast toast-bottom toast-center">
+    <div class="alert alert-info toast-item">
+      <div>Value copied to clipboard!</div>
+    </div>
   </div>
-</div>
+</app-container-card>

@@ -2280,6 +2280,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/animejs@npm:^3.1.7":
+  version: 3.1.7
+  resolution: "@types/animejs@npm:3.1.7"
+  checksum: 0b7669d7d86015c989990cc2594973097a2db5b1705bbc6b8b54cd667b57b21d9e0345090f7adc96a7d519e136b05a25660eab6bd67fd2037a7717030b063fc2
+  languageName: node
+  linkType: hard
+
 "@types/body-parser@npm:*":
   version: 1.19.2
   resolution: "@types/body-parser@npm:1.19.2"
@@ -2822,6 +2829,13 @@ __metadata:
     json-schema-traverse: ^0.4.1
     uri-js: ^4.2.2
   checksum: 874972efe5c4202ab0a68379481fbd3d1b5d0a7bd6d3cc21d40d3536ebff3352a2a1fabb632d4fd2cc7fe4cbdcd5ed6782084c9bbf7f32a1536d18f9da5007d4
+  languageName: node
+  linkType: hard
+
+"animejs@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "animejs@npm:3.2.1"
+  checksum: 6939171bed17d6b28307747e564d33e93312c26169b98498c833117d86f174ce7a318469bfd81716c223860a6d13bd76b761e79e765b86b2a2f851963caaa851
   languageName: node
   linkType: hard
 
@@ -3974,8 +3988,10 @@ __metadata:
     "@angular/platform-browser": ^16.0.0
     "@angular/platform-browser-dynamic": ^16.0.0
     "@angular/router": ^16.0.0
+    "@types/animejs": ^3.1.7
     "@types/jasmine": ~4.3.0
     "@types/uuid": ^9.0.1
+    animejs: ^3.2.1
     autoprefixer: ^10.4.14
     copy-to-clipboard: ^3.3.3
     daisyui: ^2.51.6

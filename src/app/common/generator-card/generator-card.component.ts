@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerCardComponent } from '../container-card/container-card.component';
 import * as copy from 'copy-to-clipboard';
+import * as anime from 'animejs/lib/anime';
 
 @Component({
     selector: 'app-generator-card',
@@ -24,7 +25,18 @@ export class GeneratorCardComponent {
         if (!this.toCopy) return;
 
         copy(this.toCopy);
-        this.isCopiedToastVisible.set(true);
-        setTimeout(() => this.isCopiedToastVisible.set(false), 5000);
+        anime
+            .timeline({ targets: '.toast-item', opacity: 1 })
+            .add({
+                targets: '.toast-item',
+                translateY: ['130%', '0%'],
+                duration: 500,
+            })
+            .add({
+                targets: '.toast-item',
+                translateY: ['0%', '130%'],
+                duration: 500,
+                delay: 2500,
+            });
     }
 }
