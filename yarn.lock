@@ -3976,15 +3976,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"copy-to-clipboard@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "copy-to-clipboard@npm:3.3.3"
-  dependencies:
-    toggle-selection: ^1.0.6
-  checksum: e0a325e39b7615108e6c1c8ac110ae7b829cdc4ee3278b1df6a0e4228c490442cc86444cd643e2da344fbc424b3aab8909e2fec82f8bc75e7e5b190b7c24eecf
-  languageName: node
-  linkType: hard
-
 "copy-webpack-plugin@npm:11.0.0":
   version: 11.0.0
   resolution: "copy-webpack-plugin@npm:11.0.0"
@@ -4387,7 +4378,6 @@ __metadata:
     "@types/uuid": ^9.0.1
     animejs: ^3.2.1
     autoprefixer: ^10.4.14
-    copy-to-clipboard: ^3.3.3
     daisyui: ^2.51.6
     dayjs: ^1.11.7
     express: ^4.15.2
@@ -4398,6 +4388,7 @@ __metadata:
     karma-jasmine: ~5.1.0
     karma-jasmine-html-reporter: ~2.0.0
     lorem-ipsum: ^2.0.8
+    ngx-clipboard: ^16.0.0
     postcss: ^8.4.23
     rxjs: ~7.8.0
     tailwindcss: ^3.3.2
@@ -7213,6 +7204,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ngx-clipboard@npm:^16.0.0":
+  version: 16.0.0
+  resolution: "ngx-clipboard@npm:16.0.0"
+  dependencies:
+    ngx-window-token: ">=7.0.0"
+    tslib: ^2.0.0
+  peerDependencies:
+    "@angular/common": ">=13.0.0"
+    "@angular/core": ">=13.0.0"
+  checksum: 1d125472ca038114aefb9b93f0722b0e0fb8eb2db555165bfc931c907ecd365d7a56f4f1f4377fe1b92c3829fea97ecb6adef069d0ef7d85b683daf6663e711e
+  languageName: node
+  linkType: hard
+
+"ngx-window-token@npm:>=7.0.0":
+  version: 7.0.0
+  resolution: "ngx-window-token@npm:7.0.0"
+  dependencies:
+    tslib: ^2.0.0
+  peerDependencies:
+    "@angular/common": ">=13.0.0"
+    "@angular/core": ">=13.0.0"
+  checksum: ea4d0b4ca9c1de3a05f80165f83c5b4436cb644b140f98c5b0840051853568b731c351c753fee25144de6bcc7e89677a3c4bc1ecc763d95313fd49e7c886257c
+  languageName: node
+  linkType: hard
+
 "nice-napi@npm:^1.0.2":
   version: 1.0.2
   resolution: "nice-napi@npm:1.0.2"
@@ -9442,13 +9458,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"toggle-selection@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "toggle-selection@npm:1.0.6"
-  checksum: a90dc80ed1e7b18db8f4e16e86a5574f87632dc729cfc07d9ea3ced50021ad42bb4e08f22c0913e0b98e3837b0b717e0a51613c65f30418e21eb99da6556a74c
-  languageName: node
-  linkType: hard
-
 "toidentifier@npm:1.0.1":
   version: 1.0.1
   resolution: "toidentifier@npm:1.0.1"
@@ -9509,7 +9518,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.3":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.3":
   version: 2.5.2
   resolution: "tslib@npm:2.5.2"
   checksum: 4d3c1e238b94127ed0e88aa0380db3c2ddae581dc0f4bae5a982345e9f50ee5eda90835b8bfba99b02df10a5734470be197158c36f9129ac49fdc14a6a9da222

@@ -1,17 +1,18 @@
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, Output, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerCardComponent } from '../container-card/container-card.component';
-import * as copy from 'copy-to-clipboard';
+import { ClipboardModule, ClipboardService } from 'ngx-clipboard';
 import * as anime from 'animejs/lib/anime';
 
 @Component({
     selector: 'app-generator-card',
     standalone: true,
-    imports: [CommonModule, ContainerCardComponent],
+    imports: [CommonModule, ContainerCardComponent, ClipboardModule],
     templateUrl: './generator-card.component.html',
     styleUrls: ['./generator-card.component.scss'],
 })
 export class GeneratorCardComponent {
+    @Input() public clipboardService = inject(ClipboardService);
     @Input() public title: string = '';
     @Input() public toCopy: string = '';
     @Output() public onGenerate: EventEmitter<any> = new EventEmitter();
@@ -24,7 +25,7 @@ export class GeneratorCardComponent {
     onCopy() {
         if (!this.toCopy) return;
 
-        copy(this.toCopy);
+        this.clipboardService.copy(this.toCopy);
         anime
             .timeline({ targets: '.toast-item', opacity: 1 })
             .add({
