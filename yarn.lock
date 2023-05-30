@@ -2536,13 +2536,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.15.0":
-  version: 14.18.47
-  resolution: "@types/node@npm:14.18.47"
-  checksum: 249467fa37e60bb7ce631616a5fea53f3b957a6792c6a09f7db7cdff85a7410c9e657dd9fa54bcc9d878e58f35407ce35169b84556f46b2154f90bc71063e1d0
-  languageName: node
-  linkType: hard
-
 "@types/qs@npm:*":
   version: 6.9.7
   resolution: "@types/qs@npm:6.9.7"
@@ -3492,6 +3485,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bwip-js@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "bwip-js@npm:3.4.0"
+  bin:
+    bwip-js: bin/bwip-js.js
+  checksum: f3105ee0d3a61a7e1e4f3158be4d61abb94518f45da79c798a15f3942f9b599a77dbb73bfd1a8b73246bb510e0cc6e4526d73b4f6a3ae484637184910fc5c2c9
+  languageName: node
+  linkType: hard
+
 "bytes@npm:3.0.0":
   version: 3.0.0
   resolution: "bytes@npm:3.0.0"
@@ -4374,10 +4376,10 @@ __metadata:
     "@types/animejs": ^3.1.7
     "@types/express": ^4.17.0
     "@types/jasmine": ~4.3.0
-    "@types/node": ^14.15.0
     "@types/uuid": ^9.0.1
     animejs: ^3.2.1
     autoprefixer: ^10.4.14
+    bwip-js: ^3.4.0
     daisyui: ^2.51.6
     dayjs: ^1.11.7
     express: ^4.15.2

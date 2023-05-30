@@ -31,6 +31,11 @@ export const routes: Routes = [
             ),
     },
     {
+        path: 'generators/barcode',
+        loadComponent: () =>
+            import('./pages/generators/barcodes/barcodes.component').then(m => m.BarcodesComponent),
+    },
+    {
         path: 'settings',
         loadComponent: () =>
             import('./pages/settings/common/common.component').then(m => m.CommonComponent),
