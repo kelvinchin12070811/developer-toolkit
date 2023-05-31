@@ -14,7 +14,7 @@
 
     <label class="label"><span class="label-text">Barcode Type</span></label>
     <select
-      class="select w-full"
+      class="select w-full select-bordered"
       [ngModel]="barcodeType()"
       (ngModelChange)="barcodeType.set($event)"
     >
@@ -22,6 +22,8 @@
       <option value="datamatrix">Data Matrix</option>
     </select>
 
-    <img [src]="barcode()" />
+    <div class="card barcode-viewer" *ngIf="barcode() !== ''">
+      <img [src]="barcode()" />
+    </div>
   </div>
 </app-generator-card>

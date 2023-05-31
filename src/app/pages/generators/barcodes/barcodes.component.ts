@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // @ts-ignore
 import bwipjs from 'bwip-js';
@@ -15,12 +15,12 @@ import { FormsModule } from '@angular/forms';
 export class BarcodesComponent {
     barcode = signal<string>('');
     text = signal<string>('');
-    barcodeType = signal<string>('datamatrix');
+    barcodeType = signal<string>('qrcode');
 
     generateBarcode() {
         let canvas = document.createElement('canvas');
         bwipjs.toCanvas(canvas, {
-            bcid: 'datamatrix',
+            bcid: this.barcodeType(),
             text: this.text(),
             scale: 10,
         });
