@@ -6,7 +6,7 @@
     <input
       type="button"
       value="Generate"
-      [ngClass]="{'longer-btn': !noCopy}"
+      [ngClass]="{'longer-btn': noCopy}"
       class="btn btn-primary"
       (click)="emitOnGenerate()"
     />
