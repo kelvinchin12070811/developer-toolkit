@@ -1,1 +1,27 @@
-<img [src]="barcode()" />
+<!-- <img [src]="barcode()" /> -->
+<app-generator-card title="Barcode Generator" [noCopy]="true" (onGenerate)="generateBarcode()">
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Text</span>
+    </label>
+    <input
+      type="text"
+      class="input input-bordered"
+      placeholder="Text to encode"
+      [ngModel]="text()"
+      (ngModelChange)="text.set($event)"
+    />
+
+    <label class="label"><span class="label-text">Barcode Type</span></label>
+    <select
+      class="select w-full"
+      [ngModel]="barcodeType()"
+      (ngModelChange)="barcodeType.set($event)"
+    >
+      <option value="qrcode">QR Code</option>
+      <option value="datamatrix">Data Matrix</option>
+    </select>
+
+    <img [src]="barcode()" />
+  </div>
+</app-generator-card>

@@ -2,7 +2,7 @@
   <ng-content></ng-content>
 
   <section class="action-btn-group">
-    <input *ngIf="noCopy" type="button" value="Copy" class="btn" (click)="onCopy()" />
+    <input *ngIf="!noCopy" type="button" value="Copy" class="btn" (click)="onCopy()" />
     <input
       type="button"
       value="Generate"
