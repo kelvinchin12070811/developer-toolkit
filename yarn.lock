@@ -2536,6 +2536,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^20.2.5":
+  version: 20.2.5
+  resolution: "@types/node@npm:20.2.5"
+  checksum: 38ce7c7e9d76880dc632f71d71e0d5914fcda9d5e9a7095d6c339abda55ca4affb0f2a882aeb29398f8e09d2c5151f0b6586c81c8ccdfe529c34b1ea3337425e
+  languageName: node
+  linkType: hard
+
 "@types/qs@npm:*":
   version: 6.9.7
   resolution: "@types/qs@npm:6.9.7"
@@ -4376,6 +4383,7 @@ __metadata:
     "@types/animejs": ^3.1.7
     "@types/express": ^4.17.0
     "@types/jasmine": ~4.3.0
+    "@types/node": ^20.2.5
     "@types/uuid": ^9.0.1
     animejs: ^3.2.1
     autoprefixer: ^10.4.14
