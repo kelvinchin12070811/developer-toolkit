@@ -7,3 +7,7 @@
     $width: 300px;
     width: $width;
 }
+
+.longer-btn {
+  @apply col-span-2;
+}

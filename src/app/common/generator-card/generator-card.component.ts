@@ -15,6 +15,7 @@ export class GeneratorCardComponent {
     @Input() public clipboardService = inject(ClipboardService);
     @Input() public title: string = '';
     @Input() public toCopy: string = '';
+    @Input() public noCopy: boolean = false;
     @Output() public onGenerate: EventEmitter<any> = new EventEmitter();
     isCopiedToastVisible = signal(false);
 

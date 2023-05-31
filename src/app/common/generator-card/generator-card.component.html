@@ -2,8 +2,14 @@
   <ng-content></ng-content>
 
   <section class="action-btn-group">
-    <input type="button" value="Copy" class="btn" (click)="onCopy()" />
-    <input type="button" value="Generate" class="btn btn-primary" (click)="emitOnGenerate()" />
+    <input *ngIf="noCopy" type="button" value="Copy" class="btn" (click)="onCopy()" />
+    <input
+      type="button"
+      value="Generate"
+      [ngClass]="{'longer-btn': !noCopy}"
+      class="btn btn-primary"
+      (click)="emitOnGenerate()"
+    />
   </section>
   <div class="toast toast-bottom toast-center">
     <div class="alert alert-info toast-item">
