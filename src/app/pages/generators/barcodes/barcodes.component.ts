@@ -38,4 +38,8 @@ export class BarcodesComponent {
 
         window.open(this.barcode(), '_blank');
     }
+
+    setBarcodeBackground(colour: string) {
+        this.barcodeBackground.set(colour?.match(/#(.{6})/)?.[1] ?? 'ffffff');
+    }
 }

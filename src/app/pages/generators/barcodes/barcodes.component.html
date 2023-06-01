@@ -22,23 +22,28 @@
       <option value="datamatrix">Data Matrix</option>
     </select>
 
-    <label class="label"><span class="label-text">Padding Size</span></label>
-    <input
-      type="number"
-      class="input"
-      [ngModel]="paddingSize()"
-      (ngModelChange)="paddingSize.set($event)"
-    />
-
-    <label class="label"><span class="label-text">Background Colour</span></label>
-    <div class="card barcode-background-input">
-      <input
-        type="color"
-        [ngModel]="barcodeBackground()"
-        (ngModelChange)="barcodeBackground.set($event)"
-      />
-      <div>#{{barcodeBackground()}}</div>
-    </div>
+    <section class="options-group">
+      <div>
+        <label class="label"><span class="label-text">Padding Size</span></label>
+        <input
+          type="number"
+          class="input w-full"
+          [ngModel]="paddingSize()"
+          (ngModelChange)="paddingSize.set($event)"
+        />
+      </div>
+      <div>
+        <label class="label"><span class="label-text">Background Colour</span></label>
+        <div class="barcode-background-input">
+          <input
+            type="color"
+            [ngModel]="barcodeBackground()"
+            (ngModelChange)="setBarcodeBackground($event)"
+          />
+          <div>#{{barcodeBackground()}}</div>
+        </div>
+      </div>
+    </section>
 
     <div
       class="card barcode-viewer"
