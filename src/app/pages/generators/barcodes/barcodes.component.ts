@@ -1,5 +1,5 @@
-import { Component, effect, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, PLATFORM_ID, effect, inject, signal } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 // @ts-ignore
 import bwipjs from 'bwip-js';
 import { GeneratorCardComponent } from 'src/app/common/generator-card/generator-card.component';
@@ -13,8 +13,12 @@ import { FormsModule } from '@angular/forms';
     styleUrls: ['./barcodes.component.scss'],
 })
 export class BarcodesComponent {
+    platformID = inject(PLATFORM_ID);
+
     barcode = signal<string>('');
     text = signal<string>('');
+    barcodeBackground = signal<string>('ffffff');
+    paddingSize = signal(2);
     barcodeType = signal<string>('qrcode');
 
     generateBarcode() {
@@ -23,7 +27,15 @@ export class BarcodesComponent {
             bcid: this.barcodeType(),
             text: this.text(),
             scale: 10,
+            backgroundcolor: this.barcodeBackground(),
+            padding: this.paddingSize(),
         });
         this.barcode.set(canvas.toDataURL());
+    }
+
+    openInNewTabOnClick() {
+        if (!isPlatformBrowser(this.platformID)) return;
+
+        window.open(this.barcode(), '_blank');
     }
 }

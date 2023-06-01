@@ -22,7 +22,12 @@
       <option value="datamatrix">Data Matrix</option>
     </select>
 
-    <div class="card barcode-viewer" *ngIf="barcode() !== ''">
+    <div
+      class="card barcode-viewer"
+      *ngIf="barcode() !== ''"
+      (click)="openInNewTabOnClick()"
+      title="Open barcode in new tab"
+    >
       <img [src]="barcode()" />
     </div>
   </div>

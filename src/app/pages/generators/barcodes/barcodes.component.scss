@@ -1,5 +1,5 @@
 .barcode-viewer {
-    @apply bg-white p-5 grid place-items-center mt-2;
+    @apply bg-base-100 hover:bg-base-200 p-5 grid place-items-center mt-2 cursor-pointer;
 
     img {
         width: min(100px, 80%);
