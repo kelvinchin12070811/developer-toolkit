@@ -4,5 +4,5 @@
 /generators/char
 /generators/lorem-ipsum
 /generators/barcode
-/generators/settings
+/settings
 /404

@@ -1,5 +1,10 @@
 <!-- <img [src]="barcode()" /> -->
-<app-generator-card title="Barcode Generator" [noCopy]="true" (onGenerate)="generateBarcode()">
+<app-generator-card
+  title="Barcode Generator"
+  [noCopy]="true"
+  (onGenerate)="generateBarcode()"
+  [disableGeneratorBtn]="text().length <= 0"
+>
   <div class="form-control">
     <label class="label">
       <span class="label-text">Text</span>
@@ -22,7 +27,35 @@
       <option value="datamatrix">Data Matrix</option>
     </select>
 
-    <div class="card barcode-viewer" *ngIf="barcode() !== ''">
+    <section class="options-group">
+      <div>
+        <label class="label"><span class="label-text">Padding Size</span></label>
+        <input
+          type="number"
+          class="input w-full"
+          [ngModel]="paddingSize()"
+          (ngModelChange)="paddingSize.set($event)"
+        />
+      </div>
+      <div>
+        <label class="label"><span class="label-text">Background Colour</span></label>
+        <div class="barcode-background-input">
+          <input
+            type="color"
+            [ngModel]="getBarcodeBackgroundColorInHex()"
+            (ngModelChange)="setBarcodeBackground($event)"
+          />
+          <div>#{{barcodeBackground()}}</div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="card barcode-viewer"
+      *ngIf="barcode() !== ''"
+      (click)="openInNewTabOnClick()"
+      title="Open barcode in new tab"
+    >
       <img [src]="barcode()" />
     </div>
   </div>
