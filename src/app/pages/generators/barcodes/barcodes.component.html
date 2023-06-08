@@ -1,5 +1,10 @@
 <!-- <img [src]="barcode()" /> -->
-<app-generator-card title="Barcode Generator" [noCopy]="true" (onGenerate)="generateBarcode()">
+<app-generator-card
+  title="Barcode Generator"
+  [noCopy]="true"
+  (onGenerate)="generateBarcode()"
+  [disableGeneratorBtn]="text().length <= 0"
+>
   <div class="form-control">
     <label class="label">
       <span class="label-text">Text</span>

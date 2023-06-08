@@ -8,6 +8,7 @@
       value="Generate"
       [ngClass]="{'longer-btn': noCopy}"
       class="btn btn-primary"
+      [disabled]="disableGeneratorBtn"
       (click)="emitOnGenerate()"
     />
   </section>

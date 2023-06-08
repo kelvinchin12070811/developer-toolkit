@@ -16,6 +16,7 @@ export class GeneratorCardComponent {
     @Input() public title: string = '';
     @Input() public toCopy: string = '';
     @Input() public noCopy: boolean = false;
+    @Input() public disableGeneratorBtn: boolean = false;
     @Output() public onGenerate: EventEmitter<any> = new EventEmitter();
     isCopiedToastVisible = signal(false);
 
