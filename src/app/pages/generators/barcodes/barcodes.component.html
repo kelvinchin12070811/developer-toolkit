@@ -37,7 +37,7 @@
         <div class="barcode-background-input">
           <input
             type="color"
-            [ngModel]="barcodeBackground()"
+            [ngModel]="getBarcodeBackgroundColorInHex()"
             (ngModelChange)="setBarcodeBackground($event)"
           />
           <div>#{{barcodeBackground()}}</div>

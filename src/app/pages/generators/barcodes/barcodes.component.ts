@@ -42,4 +42,8 @@ export class BarcodesComponent {
     setBarcodeBackground(colour: string) {
         this.barcodeBackground.set(colour?.match(/#(.{6})/)?.[1] ?? 'ffffff');
     }
+
+    getBarcodeBackgroundColorInHex() {
+        return `#${this.barcodeBackground()}`;
+    }
 }
