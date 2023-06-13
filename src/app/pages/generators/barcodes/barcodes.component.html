@@ -29,6 +29,15 @@
 
     <section class="options-group">
       <div>
+        <label class="label"><span class="label-text">Scale</span></label>
+        <input
+          type="number"
+          class="input w-full"
+          [ngModel]="scale()"
+          (ngModelChange)="scale.set($event)"
+        />
+      </div>
+      <div>
         <label class="label"><span class="label-text">Padding Size</span></label>
         <input
           type="number"
@@ -36,6 +45,17 @@
           [ngModel]="paddingSize()"
           (ngModelChange)="paddingSize.set($event)"
         />
+      </div>
+      <div>
+        <label class="label"><span class="label-text">Foreground Colour</span></label>
+        <div class="barcode-background-input">
+          <input
+            type="color"
+            [ngModel]="getBarcodeForegroundColorInHex()"
+            (ngModelChange)="setBarcodeForeground($event)"
+          />
+          <div>#{{foregroundColour()}}</div>
+        </div>
       </div>
       <div>
         <label class="label"><span class="label-text">Background Colour</span></label>

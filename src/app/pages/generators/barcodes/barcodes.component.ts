@@ -18,7 +18,9 @@ export class BarcodesComponent {
     barcode = signal<string>('');
     text = signal<string>('');
     barcodeBackground = signal<string>('ffffff');
+    foregroundColour = signal<string>('000000');
     paddingSize = signal(2);
+    scale = signal(2);
     barcodeType = signal<string>('qrcode');
 
     generateBarcode() {
@@ -26,9 +28,10 @@ export class BarcodesComponent {
         bwipjs.toCanvas(canvas, {
             bcid: this.barcodeType(),
             text: this.text(),
-            scale: 10,
+            scale: this.scale(),
             backgroundcolor: this.barcodeBackground(),
             padding: this.paddingSize(),
+            barcolor: this.foregroundColour(),
         });
         this.barcode.set(canvas.toDataURL());
     }
@@ -43,7 +46,15 @@ export class BarcodesComponent {
         this.barcodeBackground.set(colour?.match(/#(.{6})/)?.[1] ?? 'ffffff');
     }
 
+    setBarcodeForeground(colour: string) {
+        this.foregroundColour.set(colour?.match(/#(.{6})/)?.[1] ?? '000000');
+    }
+
     getBarcodeBackgroundColorInHex() {
         return `#${this.barcodeBackground()}`;
+    }
+
+    getBarcodeForegroundColorInHex() {
+        return `#${this.foregroundColour()}`;
     }
 }
