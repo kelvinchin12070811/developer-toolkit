@@ -1,0 +1,7 @@
+.powered-by {
+    @apply text-center text-sm text-gray-600;
+}
+
+.action-btn-group {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-2;
+}

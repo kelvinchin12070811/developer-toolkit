@@ -1,1 +1,13 @@
-<p>link-shortener works!</p>
+<app-container-card title="Link Shortener">
+  <label class="label"><span class="label-text">Url to shorten</span></label>
+  <input type="text" class="input input-bordered" placeholder="https://www.google.com" />
+
+  <label class="label"><span class="label-text">Result</span></label>
+  <input type="text" class="input input-bordered" disabled />
+
+  <div class="action-btn-group">
+    <input type="button" value="Copy" class="btn" />
+    <input type="button" class="btn btn-primary" value="Shorten" />
+  </div>
+  <h6 class="powered-by">Powered by <a class="link" href="http://is.gd">is.gd</a></h6>
+</app-container-card>
