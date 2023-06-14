@@ -10,3 +10,6 @@ body {
 app-root {
     @apply inline-block w-full flex flex-col;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -5,31 +5,33 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { HeaderComponent } from './common/header/header.component';
 import { ConfigService } from './services/config.service';
 import { FooterComponent } from './common/footer/footer.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    RouterModule,
-    SidebarComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [
+        RouterOutlet,
+        RouterModule,
+        SidebarComponent,
+        HeaderComponent,
+        FooterComponent,
+        MatToolbarModule,
+    ],
 })
 export class AppComponent {
-  titleService = inject(Title);
-  configService = inject(ConfigService);
+    titleService = inject(Title);
+    configService = inject(ConfigService);
 
-  title = 'developer-toolkit';
+    title = 'developer-toolkit';
 
-  constructor() {
-    this.titleService.setTitle('Developer Toolkit');
-  }
+    constructor() {
+        this.titleService.setTitle('Developer Toolkit');
+    }
 
-  ngOnInit() {
-    this.configService.setTheme();
-  }
+    ngOnInit() {
+        this.configService.setTheme();
+    }
 }
