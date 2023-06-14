@@ -5,3 +5,9 @@
 .action-btn-group {
     @apply grid grid-cols-1 md:grid-cols-2 gap-2;
 }
+
+.toast-item {
+    @apply opacity-0 animate-none lg:ml-80;
+    $width: 300px;
+    width: $width;
+}
