@@ -32,6 +32,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular-devkit/architect@npm:0.1601.0":
+  version: 0.1601.0
+  resolution: "@angular-devkit/architect@npm:0.1601.0"
+  dependencies:
+    "@angular-devkit/core": 16.1.0
+    rxjs: 7.8.1
+  checksum: 64119cf304f121810ef143b23dbb69116be611c8a6c7ca7748b854d00a748b4a061fd52100b852f3d595c80bd67c4a1c7203ab3665d8e8d0fb54480c9b36c3b5
+  languageName: node
+  linkType: hard
+
 "@angular-devkit/architect@npm:~0.1600.0-next.2":
   version: 0.1600.2
   resolution: "@angular-devkit/architect@npm:0.1600.2"
@@ -198,16 +208,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/schematics@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@angular-devkit/schematics@npm:16.0.1"
+"@angular-devkit/core@npm:16.1.0":
+  version: 16.1.0
+  resolution: "@angular-devkit/core@npm:16.1.0"
   dependencies:
-    "@angular-devkit/core": 16.0.1
+    ajv: 8.12.0
+    ajv-formats: 2.1.1
+    jsonc-parser: 3.2.0
+    rxjs: 7.8.1
+    source-map: 0.7.4
+  peerDependencies:
+    chokidar: ^3.5.2
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  checksum: 6f9719e7d082b0437cd5eae3162eed1b84192900d1571d8a05792285b51d532b827e5dbfc90410181f2a5fdf8cd0e621b207ef3ff9e2927312783980c0e493ec
+  languageName: node
+  linkType: hard
+
+"@angular-devkit/schematics@npm:16.1.0":
+  version: 16.1.0
+  resolution: "@angular-devkit/schematics@npm:16.1.0"
+  dependencies:
+    "@angular-devkit/core": 16.1.0
     jsonc-parser: 3.2.0
     magic-string: 0.30.0
     ora: 5.4.1
     rxjs: 7.8.1
-  checksum: cacec3d24146a64f1ff781588a5a511fe6b4ed9bbeeb4a7934cc5ad5960742fa424a69b1bee7800844af969ad82e9951387d4aeafee5afe3a5bec64d7a54622c
+  checksum: 03fc8fcd7bed8cdef51696a9b5aaee5244f0e92395e0d6089ee7c212c457423166574760414ae53575ff01a5f30cf2716cfeab3ad3ac09658823e00f80fdfd04
   languageName: node
   linkType: hard
 
@@ -239,31 +267,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/cli@npm:~16.0.1":
-  version: 16.0.1
-  resolution: "@angular/cli@npm:16.0.1"
+"@angular/cli@npm:^16.1.0":
+  version: 16.1.0
+  resolution: "@angular/cli@npm:16.1.0"
   dependencies:
-    "@angular-devkit/architect": 0.1600.1
-    "@angular-devkit/core": 16.0.1
-    "@angular-devkit/schematics": 16.0.1
-    "@schematics/angular": 16.0.1
+    "@angular-devkit/architect": 0.1601.0
+    "@angular-devkit/core": 16.1.0
+    "@angular-devkit/schematics": 16.1.0
+    "@schematics/angular": 16.1.0
     "@yarnpkg/lockfile": 1.1.0
     ansi-colors: 4.1.3
-    ini: 4.0.0
+    ini: 4.1.1
     inquirer: 8.2.4
     jsonc-parser: 3.2.0
     npm-package-arg: 10.1.0
     npm-pick-manifest: 8.0.1
     open: 8.4.2
     ora: 5.4.1
-    pacote: 15.1.3
+    pacote: 15.2.0
     resolve: 1.22.2
-    semver: 7.4.0
+    semver: 7.5.1
     symbol-observable: 4.0.0
     yargs: 17.7.2
   bin:
     ng: bin/ng.js
-  checksum: 5889e12f823e67d1276a89395344f3a9067f3dd8a2fed06ab6cbdc18eab9d740ee1828254b21d2b3ecdc0501dac1575cb7f5a73c8431fa49648ec39208ee0987
+  checksum: 99e4cdd5da4fbefb05180ed601c3906d6fdc76d739cee67e7133fa692f82f31a87a5e283e23396c076d7f2847bd34724f18ce16af07cc48656b543a4fab5a365
   languageName: node
   linkType: hard
 
@@ -3207,14 +3235,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@schematics/angular@npm:16.0.1":
-  version: 16.0.1
-  resolution: "@schematics/angular@npm:16.0.1"
+"@schematics/angular@npm:16.1.0":
+  version: 16.1.0
+  resolution: "@schematics/angular@npm:16.1.0"
   dependencies:
-    "@angular-devkit/core": 16.0.1
-    "@angular-devkit/schematics": 16.0.1
+    "@angular-devkit/core": 16.1.0
+    "@angular-devkit/schematics": 16.1.0
     jsonc-parser: 3.2.0
-  checksum: c1050eb521d6dc4aa154c75d7010a3c123695f793a3b01c892912d191f95cd8cce90326ef6c533c5b4ec643d8ccdcb97bc32bb79f9f5a1cd9886ea612e4fd546
+  checksum: 0532123211857b20f4dbb171bc12e2fe0ff00c270a2d2845e2aa17ad17cf5530644307f97666f9107511e346b210a505acf0307dad41dc6f848117875b8ae9c2
   languageName: node
   linkType: hard
 
@@ -5207,7 +5235,7 @@ __metadata:
     "@angular-devkit/build-angular": ^16.0.1
     "@angular/animations": ^16.0.0
     "@angular/cdk": 16.1.0
-    "@angular/cli": ~16.0.1
+    "@angular/cli": ^16.1.0
     "@angular/common": ^16.0.0
     "@angular/compiler": ^16.0.0
     "@angular/compiler-cli": ^16.0.0
@@ -6729,10 +6757,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ini@npm:4.0.0":
-  version: 4.0.0
-  resolution: "ini@npm:4.0.0"
-  checksum: 6bea95c94be5703a7d9cc202cb0f4b7290831687d4670421b84993a99fa15383f9781cbee61af579c9a8b72b4f3b9ae790525d61077438c2f20577ac70990583
+"ini@npm:4.1.1":
+  version: 4.1.1
+  resolution: "ini@npm:4.1.1"
+  checksum: 0e5909554074fbc31824fa5415b0f604de4a665514c96a897a77bf77353a7ad4743927321270e9d0610a9d510ccd1f3cd77422f7cc80d8f4542dbce75476fb6d
   languageName: node
   linkType: hard
 
@@ -8463,9 +8491,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pacote@npm:15.1.3":
-  version: 15.1.3
-  resolution: "pacote@npm:15.1.3"
+"pacote@npm:15.2.0":
+  version: 15.2.0
+  resolution: "pacote@npm:15.2.0"
   dependencies:
     "@npmcli/git": ^4.0.0
     "@npmcli/installed-package-contents": ^2.0.1
@@ -8487,7 +8515,7 @@ __metadata:
     tar: ^6.1.11
   bin:
     pacote: lib/bin.js
-  checksum: de03c08e2e04b812953d64e50f5b22e56c826487e8b8b35bb79368681ebe865e92cd5ca189339c75fb133c8fb25a3e1518c8eb19a864f1c6b1a8d42bce99e54e
+  checksum: c731572be2bf226b117eba076d242bd4cd8be7aa01e004af3374a304ad7ab330539e22644bc33de12d2a7d45228ccbcbf4d710f59c84414f3d09a1a95ee6f0bf
   languageName: node
   linkType: hard
 
@@ -9482,6 +9510,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:7.5.1, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.3.8":
+  version: 7.5.1
+  resolution: "semver@npm:7.5.1"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: d16dbedad53c65b086f79524b9ef766bf38670b2395bdad5c957f824dcc566b624988013564f4812bcace3f9d405355c3635e2007396a39d1bffc71cfec4a2fc
+  languageName: node
+  linkType: hard
+
 "semver@npm:^5.6.0":
   version: 5.7.1
   resolution: "semver@npm:5.7.1"
@@ -9497,17 +9536,6 @@ __metadata:
   bin:
     semver: ./bin/semver.js
   checksum: 1b26ecf6db9e8292dd90df4e781d91875c0dcc1b1909e70f5d12959a23c7eebb8f01ea581c00783bbee72ceeaad9505797c381756326073850dc36ed284b21b9
-  languageName: node
-  linkType: hard
-
-"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.3.8":
-  version: 7.5.1
-  resolution: "semver@npm:7.5.1"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: d16dbedad53c65b086f79524b9ef766bf38670b2395bdad5c957f824dcc566b624988013564f4812bcace3f9d405355c3635e2007396a39d1bffc71cfec4a2fc
   languageName: node
   linkType: hard
 
