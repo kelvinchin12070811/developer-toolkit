@@ -1,8 +1,0 @@
-/
-/generators/uuid
-/generators/timestamp
-/generators/char
-/generators/lorem-ipsum
-/generators/barcode
-/settings
-/404

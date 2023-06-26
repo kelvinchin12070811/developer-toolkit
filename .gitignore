@@ -2,7 +2,6 @@
 
 # Compiled output
 /dist
-/build
 /tmp
 /out-tsc
 /bazel-out
@@ -11,8 +10,6 @@
 /node_modules
 npm-debug.log
 yarn-error.log
-.pnp.cjs
-.pnp.loader.mjs
 
 # IDEs and editors
 .idea/
@@ -39,8 +36,6 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-.yarn/*
-!.yarn/releases
 
 # System files
 .DS_Store
