@@ -15,7 +15,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.7",
-    "@angular/cli": "latest",
+    "@angular/cli": "^17.0.7",
     "@angular/common": "^17.0.7",
     "@angular/compiler": "^17.0.7",
     "@angular/core": "^17.0.7",
@@ -60,5 +60,5 @@
   "browser": {
     "crypto": false
   },
-  "packageManager": "yarn@3.5.1"
+  "packageManager": "yarn@4.0.2"
 }
