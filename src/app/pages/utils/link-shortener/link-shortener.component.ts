@@ -35,16 +35,36 @@ export class LinkShortenerComponent {
         if (!this.shortenLink()) return;
 
         this.clipboardService.copy(this.shortenLink());
+        this.popupCopiedInfo();
+    }
+
+    popupCopiedInfo() {
         anime
-            .timeline({ targets: '.toast-item', opacity: 1 })
+            .timeline({ targets: '.alert-info', opacity: 1 })
             .add({
-                targets: '.toast-item',
-                translateY: ['130%', '0%'],
+                targets: '.alert-info',
+                translateX: ['130%', '0%'],
                 duration: 500,
             })
             .add({
-                targets: '.toast-item',
-                translateY: ['0%', '130%'],
+                targets: '.alert-info',
+                translateX: ['0%', '130%'],
+                duration: 500,
+                delay: 2500,
+            });
+    }
+
+    popupErrorOccurred() {
+        anime
+            .timeline({ targets: '.alert-error', opacity: 1 })
+            .add({
+                targets: '.alert-error',
+                translateX: ['130%', '0%'],
+                duration: 500,
+            })
+            .add({
+                targets: '.alert-error',
+                translateX: ['0%', '130%'],
                 duration: 500,
                 delay: 2500,
             });
