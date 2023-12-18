@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ClipboardService } from 'ngx-clipboard';
 import * as anime from 'animejs/lib/anime';
+import { catchError, throwError } from 'rxjs';
 
 const API_DOMAIN = 'https://is.gd/create.php';
 
@@ -28,7 +29,22 @@ export class LinkShortenerComponent {
         const domain = new URL(API_DOMAIN);
         domain.searchParams.set('format', 'simple');
         domain.searchParams.set('url', this.originalLink());
-        this.shortenLink.set(domain.href);
+        console.log(domain.href);
+
+        this.httpClient
+            .get(domain.href, {
+                responseType: 'text',
+                headers: new HttpHeaders({
+                    'access-control-allow-origin': '*',
+                }),
+            })
+            .pipe(
+                catchError((error: HttpErrorResponse) => {
+                    this.popupErrorOccurred();
+                    return throwError(() => new Error(error.message));
+                })
+            )
+            .subscribe(link => this.shortenLink.set(link));
     }
 
     onCopy() {
