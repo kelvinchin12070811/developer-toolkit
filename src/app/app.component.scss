@@ -1,0 +1,15 @@
+.drawer-content {
+    @apply flex flex-col gap-4 justify-between;
+}
+
+.drawer-side {
+    @apply bg-base-200;
+}
+
+.main-drawer-content {
+    @apply flex flex-col items-stretch lg:justify-center max-lg:mt-3 max-lg:mb-3;
+}
+
+.menu-container {
+    @apply w-80 bg-base-200;
+}
