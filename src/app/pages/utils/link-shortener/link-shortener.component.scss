@@ -11,3 +11,11 @@
     $width: 300px;
     width: $width;
 }
+
+.loading {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.loading-container {
+    @apply bg-base-200 h-full w-full absolute top-0 left-0 card card-bordered opacity-80;
+}

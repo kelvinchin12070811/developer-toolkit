@@ -34,10 +34,14 @@ export class LinkShortenerComponent {
 
     public originalLink = signal('');
     public shortenLink = signal('');
+    public isLoading = signal(false);
 
     onShorten() {
-        console.log('clicked');
         if (!this.originalLink()) return;
+        this.isLoading.set(true);
+
+        const resetLoading = () => this.isLoading.set(false);
+        const setShortenLink = (value: string) => this.shortenLink.set(value);
 
         const domain = new URL(API_DOMAIN);
         domain.searchParams.set('format', 'json');
@@ -49,16 +53,27 @@ export class LinkShortenerComponent {
                 map((res: any) => {
                     if ('shorturl' in res) return res.shorturl;
 
-                    return throwError(
-                        () => new Error(`${res.errormessage} (code ${res.errorcode})`)
-                    );
+                    this.popupErrorOccurred();
+                    let errorMessage = `${res.errormessage} (code ${res.errorcode})`;
+                    console.error(errorMessage);
+                    throw new Error(errorMessage);
                 }),
                 catchError((error: HttpErrorResponse) => {
                     this.popupErrorOccurred();
                     return throwError(() => new Error(error.message));
                 })
             )
-            .subscribe(link => this.shortenLink.set(link));
+            .subscribe({
+                next(link) {
+                    setShortenLink(link);
+                },
+                error(err) {
+                    resetLoading();
+                },
+                complete() {
+                    resetLoading();
+                },
+            });
     }
 
     onCopy() {
