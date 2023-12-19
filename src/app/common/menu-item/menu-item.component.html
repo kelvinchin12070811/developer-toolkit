@@ -1,0 +1,9 @@
+<a
+  [routerLink]="[link]"
+  [routerLinkActive]="['active']"
+  [routerLinkActiveOptions]="{ exact: linkExactMatch }"
+>
+  @if (icon != null || icon != '') {
+  <i class="material-icons">{{icon}}</i>
+  } {{label}}
+</a>
