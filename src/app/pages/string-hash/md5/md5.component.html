@@ -1,1 +1,11 @@
-<app-container-card> test </app-container-card>
+<app-generator-card title="MD5 Hasher" [toCopy]="hash()" (onGenerate)="onGenerate()">
+  <label class="label">
+    <span class="label-text">Text</span>
+  </label>
+  <input type="text" class="input" [ngModel]="text()" (ngModelChange)="text.set($event)" />
+
+  <label class="label"><span class="label-text">Hash</span></label>
+  <input type="text" class="input" [ngModel]="hash()" disabled />
+
+  <div class="separator"></div>
+</app-generator-card>

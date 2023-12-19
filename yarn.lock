@@ -2447,6 +2447,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/crypto-js@npm:^4":
+  version: 4.2.1
+  resolution: "@types/crypto-js@npm:4.2.1"
+  checksum: 413a3de36ff916fd796aac6069dc4afba26c3add11c2570eff43f98eb86e34ed8fa2693636743d13685f038f9d3a21e3327b33e3a06c3cb332be5ca64b802925
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.7
   resolution: "@types/eslint-scope@npm:3.7.7"
@@ -3929,6 +3936,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crypto-js@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "crypto-js@npm:4.2.0"
+  checksum: c7bcc56a6e01c3c397e95aa4a74e4241321f04677f9a618a8f48a63b5781617248afb9adb0629824792e7ec20ca0d4241a49b6b2938ae6f973ec4efc5c53c924
+  languageName: node
+  linkType: hard
+
 "css-loader@npm:6.8.1":
   version: 6.8.1
   resolution: "css-loader@npm:6.8.1"
@@ -4157,6 +4171,7 @@ __metadata:
     "@angular/router": "npm:^17.0.7"
     "@angular/ssr": "npm:^17.0.7"
     "@types/animejs": "npm:^3.1.7"
+    "@types/crypto-js": "npm:^4"
     "@types/express": "npm:^4.17.17"
     "@types/jasmine": "npm:~4.3.0"
     "@types/node": "npm:^20.2.5"
@@ -4164,6 +4179,7 @@ __metadata:
     animejs: "npm:^3.2.1"
     autoprefixer: "npm:^10.4.14"
     bwip-js: "npm:^3.4.0"
+    crypto-js: "npm:^4.2.0"
     daisyui: "npm:^4.4.20"
     dayjs: "npm:^1.11.7"
     express: "npm:^4.18.2"
