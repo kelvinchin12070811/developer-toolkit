@@ -11,7 +11,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { ClipboardService } from 'ngx-clipboard';
 import * as anime from 'animejs/lib/anime';
-import { catchError, map, throwError } from 'rxjs';
+import { catchError, finalize, map, tap, throwError } from 'rxjs';
 
 const API_DOMAIN = 'https://is.gd/create.php';
 
@@ -38,11 +38,8 @@ export class LinkShortenerComponent {
 
     onShorten() {
         if (!this.originalLink()) return;
+
         this.isLoading.set(true);
-
-        const resetLoading = () => this.isLoading.set(false);
-        const setShortenLink = (value: string) => this.shortenLink.set(value);
-
         const domain = new URL(API_DOMAIN);
         domain.searchParams.set('format', 'json');
         domain.searchParams.set('url', this.originalLink());
@@ -53,27 +50,16 @@ export class LinkShortenerComponent {
                 map((res: any) => {
                     if ('shorturl' in res) return res.shorturl;
 
-                    this.popupErrorOccurred();
                     let errorMessage = `${res.errormessage} (code ${res.errorcode})`;
-                    console.error(errorMessage);
                     throw new Error(errorMessage);
                 }),
                 catchError((error: HttpErrorResponse) => {
                     this.popupErrorOccurred();
                     return throwError(() => new Error(error.message));
-                })
+                }),
+                finalize(() => this.isLoading.set(false))
             )
-            .subscribe({
-                next(link) {
-                    setShortenLink(link);
-                },
-                error(err) {
-                    resetLoading();
-                },
-                complete() {
-                    resetLoading();
-                },
-            });
+            .subscribe(link => this.shortenLink.set(link));
     }
 
     onCopy() {
