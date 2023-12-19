@@ -44,4 +44,16 @@ export class SidebarComponent {
             icon: 'qr_code',
         },
     ]);
+
+    public stringHashs = signal<MenuItem[]>([
+        {
+            label: 'MD5',
+            link: 'md5',
+            icon: 'fingerprint',
+        },
+    ]);
+
+    buildTemplatedLink(prefix: string, link: string) {
+        return `/${prefix}/${link}`;
+    }
 }

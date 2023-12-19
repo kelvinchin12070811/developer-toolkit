@@ -14,17 +14,21 @@
   app-menu-item
   [icon]="generator.icon"
   [label]="generator.label"
-  [link]="'/generators/' + generator.link"
+  [link]="buildTemplatedLink('generators', generator.link)"
 ></li>
 }
 
 <div class="divider"></div>
 <li class="menu-title"><span>String Hasher</span></li>
-<li>
-  <a [routerLink]="['string-hash/md5']" [routerLinkActive]="['active']"
-    ><i class="material-icons">link</i> MD5</a
-  >
-</li>
+
+@for (stringHash of stringHashs(); track stringHash.link) {
+<li
+  app-menu-item
+  [icon]="stringHash.icon"
+  [label]="stringHash.label"
+  [link]="buildTemplatedLink('string-hash', stringHash.link)"
+></li>
+}
 
 <div class="divider"></div>
 <li class="menu-title"><span>Other Utilities</span></li>
