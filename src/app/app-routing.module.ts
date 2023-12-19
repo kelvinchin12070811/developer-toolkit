@@ -36,6 +36,13 @@ export const routes: Routes = [
             import('./pages/generators/barcodes/barcodes.component').then(m => m.BarcodesComponent),
     },
     {
+        path: 'utils/link-shortener',
+        loadComponent: () =>
+            import('./pages/utils/link-shortener/link-shortener.component').then(
+                m => m.LinkShortenerComponent
+            ),
+    },
+    {
         path: 'settings',
         loadComponent: () =>
             import('./pages/settings/common/common.component').then(m => m.CommonComponent),

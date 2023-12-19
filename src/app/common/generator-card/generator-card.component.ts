@@ -32,12 +32,12 @@ export class GeneratorCardComponent {
             .timeline({ targets: '.toast-item', opacity: 1 })
             .add({
                 targets: '.toast-item',
-                translateY: ['130%', '0%'],
+                translateX: ['130%', '0%'],
                 duration: 500,
             })
             .add({
                 targets: '.toast-item',
-                translateY: ['0%', '130%'],
+                translateX: ['0%', '130%'],
                 duration: 500,
                 delay: 2500,
             });
