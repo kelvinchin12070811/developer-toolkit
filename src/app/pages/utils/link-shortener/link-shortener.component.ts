@@ -1,18 +1,30 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
-import { HttpClient, HttpClientModule, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {
+    HttpClient,
+    HttpClientJsonpModule,
+    HttpClientModule,
+    HttpErrorResponse,
+    HttpHeaders,
+} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ClipboardService } from 'ngx-clipboard';
 import * as anime from 'animejs/lib/anime';
-import { catchError, throwError } from 'rxjs';
+import { catchError, map, throwError } from 'rxjs';
 
 const API_DOMAIN = 'https://is.gd/create.php';
 
 @Component({
     selector: 'app-link-shortener',
     standalone: true,
-    imports: [CommonModule, ContainerCardComponent, HttpClientModule, FormsModule],
+    imports: [
+        CommonModule,
+        ContainerCardComponent,
+        HttpClientModule,
+        FormsModule,
+        HttpClientJsonpModule,
+    ],
     templateUrl: './link-shortener.component.html',
     styleUrls: ['./link-shortener.component.scss'],
 })
@@ -24,21 +36,23 @@ export class LinkShortenerComponent {
     public shortenLink = signal('');
 
     onShorten() {
+        console.log('clicked');
         if (!this.originalLink()) return;
 
         const domain = new URL(API_DOMAIN);
-        domain.searchParams.set('format', 'simple');
+        domain.searchParams.set('format', 'json');
         domain.searchParams.set('url', this.originalLink());
-        console.log(domain.href);
 
         this.httpClient
-            .get(domain.href, {
-                responseType: 'text',
-                headers: new HttpHeaders({
-                    'access-control-allow-origin': '*',
-                }),
-            })
+            .jsonp(domain.href, 'callback')
             .pipe(
+                map((res: any) => {
+                    if ('shorturl' in res) return res.shorturl;
+
+                    return throwError(
+                        () => new Error(`${res.errormessage} (code ${res.errorcode})`)
+                    );
+                }),
                 catchError((error: HttpErrorResponse) => {
                     this.popupErrorOccurred();
                     return throwError(() => new Error(error.message));
