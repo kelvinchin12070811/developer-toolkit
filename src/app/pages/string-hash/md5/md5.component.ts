@@ -13,8 +13,11 @@ import { FormsModule } from '@angular/forms';
 export class Md5Component {
     public text = signal('');
     public hash = signal('');
+    public uppercase = signal(false);
 
     onGenerate() {
-        this.hash.set(MD5(this.text()).toString(enc.Hex));
+        const md5 = MD5(this.text()).toString(enc.Hex);
+        if (this.uppercase()) this.hash.set(md5.toUpperCase());
+        else this.hash.set(md5.toLowerCase());
     }
 }
