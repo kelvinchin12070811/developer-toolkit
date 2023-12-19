@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { StringHashRoutingModule } from './pages/string-hash/string-hash-routing.module';
 
 export const routes: Routes = [
     {
@@ -36,23 +37,24 @@ export const routes: Routes = [
             import('./pages/generators/barcodes/barcodes.component').then(m => m.BarcodesComponent),
     },
     {
+        path: 'string-hash',
+        loadChildren: async () =>
+            (await import('./pages/string-hash/string-hash.module')).StringHashModule,
+    },
+    {
         path: 'utils/link-shortener',
-        loadComponent: () =>
-            import('./pages/utils/link-shortener/link-shortener.component').then(
-                m => m.LinkShortenerComponent
-            ),
+        loadChildren: () =>
+            import('./pages/string-hash/string-hash.module').then(m => m.StringHashModule),
     },
     {
         path: 'settings',
-        loadComponent: () =>
-            import('./pages/settings/common/common.component').then(m => m.CommonComponent),
+        loadComponent: async () =>
+            (await import('./pages/settings/common/common.component')).CommonComponent,
     },
     {
         path: '**',
-        loadComponent: () =>
-            import('./pages/http-status/not-found/not-found.component').then(
-                m => m.NotFoundComponent
-            ),
+        loadComponent: async () =>
+            (await import('./pages/http-status/not-found/not-found.component')).NotFoundComponent,
     },
 ];
 
