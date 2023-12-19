@@ -3,9 +3,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Start SSR Dev Server",
+            "label": "Start Dev Server",
             "type": "shell",
-            "command": "yarn dev:ssr",
+            "command": "yarn start",
             "isBackground": true,
             "problemMatcher": {
                 "owner": "typescript",

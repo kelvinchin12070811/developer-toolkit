@@ -10,7 +10,8 @@
     "dev:ssr": "ng run developer-toolkit:serve-ssr",
     "serve:ssr": "node dist/developer-toolkit/server/main.js",
     "build:ssr": "ng build && ng run developer-toolkit:server",
-    "prerender": "ng run developer-toolkit:prerender"
+    "prerender": "ng run developer-toolkit:prerender",
+    "cloudflare:build": "ng build && cp ./dist/developer-toolkit/browser/index.html ./dist/developer-toolkit/browser/404.html"
   },
   "private": true,
   "dependencies": {
