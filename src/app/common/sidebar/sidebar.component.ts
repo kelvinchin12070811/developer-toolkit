@@ -53,6 +53,10 @@ export class SidebarComponent {
         },
     ]);
 
+    public otherUtilities = signal<MenuItem[]>([
+        { label: 'Link Shortener', link: 'link-shortener', icon: 'link' },
+    ]);
+
     buildTemplatedLink(prefix: string, link: string) {
         return `/${prefix}/${link}`;
     }
