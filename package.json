@@ -11,7 +11,8 @@
     "serve:ssr": "node dist/developer-toolkit/server/main.js",
     "build:ssr": "ng build && ng run developer-toolkit:server",
     "prerender": "ng run developer-toolkit:prerender",
-    "cloudflare:build": "ng build && cp ./dist/developer-toolkit/browser/index.html ./dist/developer-toolkit/browser/404.html"
+    "cloudflare:build": "ng build && cp ./dist/developer-toolkit/browser/index.html ./dist/developer-toolkit/browser/404.html",
+    "cloudflare:tunnel": "cloudflared tunnel --url http://localhost:4200"
   },
   "private": true,
   "dependencies": {
@@ -62,5 +63,5 @@
   "browser": {
     "crypto": false
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.0"
 }

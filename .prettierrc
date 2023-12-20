@@ -28,6 +28,13 @@
                 "tabWidth": 2,
                 "parser": "html"
             }
+        },
+        {
+            "files": "package.json",
+            "options": {
+                "tabWidth": 2,
+                "parser": "json"
+            }
         }
     ]
 }
