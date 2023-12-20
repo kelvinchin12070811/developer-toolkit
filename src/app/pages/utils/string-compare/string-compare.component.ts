@@ -41,17 +41,17 @@ export class StringCompareComponent {
     public getResult() {
         this.compareStrings();
         this.missMatchPattern.set({
+            match: this.getMatchedCharacters(this.leftHandSide(), this.stringMatch() ?? 1),
+            unmatch: this.getUnmatchedCharacters(this.leftHandSide(), this.stringMatch() ?? 1),
+            outOfSyncChar: this.getUnmatchedCharacter(this.leftHandSide(), this.stringMatch() ?? 1),
+        });
+        this.originalPattern.set({
             match: this.getMatchedCharacters(this.rightHandSide(), this.stringMatch() ?? 1),
             unmatch: this.getUnmatchedCharacters(this.rightHandSide(), this.stringMatch() ?? 1),
             outOfSyncChar: this.getUnmatchedCharacter(
                 this.rightHandSide(),
                 this.stringMatch() ?? 1
             ),
-        });
-        this.originalPattern.set({
-            match: this.getMatchedCharacters(this.leftHandSide(), this.stringMatch() ?? 1),
-            unmatch: this.getUnmatchedCharacters(this.leftHandSide(), this.stringMatch() ?? 1),
-            outOfSyncChar: this.getUnmatchedCharacter(this.leftHandSide(), this.stringMatch() ?? 1),
         });
     }
 
@@ -75,18 +75,18 @@ export class StringCompareComponent {
         if (this.stringMatch() == null) return '';
 
         if (this.lengthDiff() > 0) {
-            return `Length mismatch: Left hand side is longer than Right hand side by ${Math.abs(
+            return `Length mismatch: Input string is longer than reference string by ${Math.abs(
                 this.lengthDiff()
             )} character(s)`;
         } else if (this.lengthDiff() < 0) {
-            return `Length mismatch: Right hand side is longer than Left hand side by ${Math.abs(
+            return `Length mismatch: Input string is shorter than reference string by ${Math.abs(
                 this.lengthDiff()
             )} character(s)`;
         }
 
         return `Content mismatch: First mismatch located at position ${
             this.stringMatch() ?? 0
-        } of right hand side which is '${this.rightHandSide()[(this.stringMatch() ?? 1) - 1]}'`;
+        } of input string which is '${this.leftHandSide()[(this.stringMatch() ?? 1) - 1]}'`;
     }
 
     @HostListener('document:keypress', ['$event'])

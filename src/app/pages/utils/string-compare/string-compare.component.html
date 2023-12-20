@@ -1,12 +1,12 @@
 <app-container-card title="String Compare">
-  <label class="label"><span class="label-text">Left hand side</span></label>
+  <label class="label"><span class="label-text">Input</span></label>
   <input
     type="text"
     class="input"
     [ngModel]="leftHandSide()"
     (ngModelChange)="leftHandSide.set($event)"
   />
-  <label class="label"><span class="label-text">Right hand side</span></label>
+  <label class="label"><span class="label-text">Reference</span></label>
   <input
     type="text"
     class="input"
@@ -31,7 +31,7 @@
       [ngModel]="compareOriginal()"
       (ngModelChange)="compareOriginal.set($event)"
     />
-    <span class="label-text text-left">Show comparison with original string</span>
+    <span class="label-text text-left">Show comparison with reference string</span>
   </label>
 
   @if (stringMatch() != null) { @if (stringMatch() === 0) {
@@ -52,7 +52,7 @@
       ><span class="text-error whitespace-pre">{{missMatchPattern().unmatch}}</span>
 
       @if (compareOriginal()) {
-      <div>Compare to original:</div>
+      <div>Compare to reference:</div>
       <span class="whitespace-pre">{{originalPattern().match}}</span
       ><span class="bg-info text-info-content whitespace-pre"
         >{{originalPattern().outOfSyncChar}}</span
