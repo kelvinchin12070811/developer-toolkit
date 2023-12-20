@@ -1,4 +1,17 @@
-import { Component, EventEmitter, Inject, Input, Output, inject, signal } from '@angular/core';
+/*************************************************************************************************************
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ ************************************************************************************************************/
+import {
+    Component,
+    EventEmitter,
+    HostListener,
+    Input,
+    Output,
+    inject,
+    signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerCardComponent } from '../container-card/container-card.component';
 import { ClipboardModule, ClipboardService } from 'ngx-clipboard';
@@ -20,6 +33,7 @@ export class GeneratorCardComponent {
     @Output() public onGenerate: EventEmitter<any> = new EventEmitter();
     isCopiedToastVisible = signal(false);
 
+    @HostListener('document:keydown.enter', ['$event'])
     emitOnGenerate() {
         this.onGenerate.emit();
     }

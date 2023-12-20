@@ -1,6 +1,11 @@
+<!----------------------------------------------------------------------------------------------------------->
+<!-- This Source Code Form is subject to the terms of the Mozilla Public                                   -->
+<!-- License, v. 2.0. If a copy of the MPL was not distributed with this                                   -->
+<!-- file, You can obtain one at http://mozilla.org/MPL/2.0/.                                              -->
+<!----------------------------------------------------------------------------------------------------------->
 <div class="drawer h-full lg:drawer-open">
   <input id="sidebar-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content">
+  <div class="drawer-content min-h-screen">
     <app-header></app-header>
     <div class="main-drawer-content">
       <!-- Page content here -->
@@ -10,7 +15,7 @@
   </div>
   <div class="drawer-side">
     <label for="sidebar-drawer" class="drawer-overlay"></label>
-    <ul class="menu text-base-content menu-container h-full">
+    <ul class="menu text-base-content menu-container min-h-full">
       <app-sidebar></app-sidebar>
     </ul>
   </div>

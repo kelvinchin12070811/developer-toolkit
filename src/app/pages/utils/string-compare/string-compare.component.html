@@ -1,0 +1,78 @@
+<!----------------------------------------------------------------------------------------------------------->
+<!-- This Source Code Form is subject to the terms of the Mozilla Public                                   -->
+<!-- License, v. 2.0. If a copy of the MPL was not distributed with this                                   -->
+<!-- file, You can obtain one at http://mozilla.org/MPL/2.0/.                                              -->
+<!----------------------------------------------------------------------------------------------------------->
+<app-container-card title="String Compare">
+  <label class="label"><span class="label-text">Input</span></label>
+  <input
+    type="text"
+    class="input"
+    [ngModel]="leftHandSide()"
+    (ngModelChange)="leftHandSide.set($event)"
+  />
+  <label class="label"><span class="label-text">Reference</span></label>
+  <input
+    type="text"
+    class="input"
+    [ngModel]="rightHandSide()"
+    (ngModelChange)="rightHandSide.set($event)"
+  />
+
+  <label class="label cursor-pointer justify-start">
+    <input
+      type="checkbox"
+      class="toggle"
+      [ngModel]="ignoreCase()"
+      (ngModelChange)="ignoreCase.set($event)"
+    />
+    <span class="label-text text-left">Ignore case</span>
+  </label>
+
+  <label class="label cursor-pointer justify-start">
+    <input
+      type="checkbox"
+      class="toggle"
+      [ngModel]="compareOriginal()"
+      (ngModelChange)="compareOriginal.set($event)"
+    />
+    <span class="label-text text-left">Show comparison with reference string</span>
+  </label>
+
+  @if (stringMatch() != null) { @if (stringMatch() === 0) {
+  <div class="spacer"></div>
+  <div class="text-success status-message">
+    <span class="material-icons">check_circle</span> Match
+  </div>
+  } @else {
+  <div class="text-error status-message">
+    <span class="material-icons">cancel</span> {{getErrorDescription()}}
+  </div>
+  <div>
+    <div class="match-pattern">
+      <div>Match pattern:</div>
+      <span class="text-success whitespace-pre">{{missMatchPattern().match}}</span
+      ><span class="text-error-content bg-error whitespace-pre"
+        >{{missMatchPattern().outOfSyncChar}}</span
+      ><span class="text-error whitespace-pre">{{missMatchPattern().unmatch}}</span>
+
+      @if (compareOriginal()) {
+      <div>Compare to reference:</div>
+      <span class="whitespace-pre">{{originalPattern().match}}</span
+      ><span class="bg-info text-info-content whitespace-pre"
+        >{{originalPattern().outOfSyncChar}}</span
+      ><span class="whitespace-pre">{{originalPattern().unmatch}}</span>
+      }
+    </div>
+  </div>
+  } }
+
+  <div class="spacer"></div>
+
+  <div class="button-group">
+    <button class="btn" (click)="reset()">Reset</button>
+    <button class="btn btn-primary" (click)="getResult()" [disabled]="shouldCompareBtnDisabled()">
+      Compare
+    </button>
+  </div>
+</app-container-card>

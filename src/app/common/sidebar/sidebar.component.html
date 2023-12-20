@@ -1,69 +1,55 @@
+<!----------------------------------------------------------------------------------------------------------->
+<!-- This Source Code Form is subject to the terms of the Mozilla Public                                   -->
+<!-- License, v. 2.0. If a copy of the MPL was not distributed with this                                   -->
+<!-- file, You can obtain one at http://mozilla.org/MPL/2.0/.                                              -->
+<!----------------------------------------------------------------------------------------------------------->
 <div class="site-logo-container">
   <i class="material-icons">home_repair_service</i>
   <h1>Developer Toolkit</h1>
 </div>
 
 <!-- Sidebar content here -->
-<li class="menu">
-  <a
-    [routerLink]="['/']"
-    [routerLinkActive]="['active']"
-    [routerLinkActiveOptions]="{ exact: true }"
-  >
-    <i class="material-icons">home</i>
-    Home
-  </a>
-</li>
+<li app-menu-item icon="home" label="Home" link="/" [linkExactMatch]="true"></li>
 
 <div class="divider"></div>
 <li class="menu-title"><span>Generators</span></li>
 
-<li>
-  <a [routerLink]="['/generators/uuid']" [routerLinkActive]="['active']">
-    <i class="material-icons">label_important</i> UUID
-  </a>
-</li>
+@for (generator of generators(); track generator.link) {
+<li
+  app-menu-item
+  [icon]="generator.icon"
+  [label]="generator.label"
+  [link]="buildTemplatedLink('generators', generator.link)"
+></li>
+}
 
-<li>
-  <a [routerLink]="['/generators/timestamp']" [routerLinkActive]="['active']">
-    <i class="material-icons">alarm</i> Timestamp
-  </a>
-</li>
+<div class="divider"></div>
+<li class="menu-title"><span>String Hasher</span></li>
 
-<li>
-  <a [routerLink]="['generators/char']" [routerLinkActive]="['active']">
-    <i class="material-icons">abc</i> Character
-  </a>
-</li>
-
-<li>
-  <a [routerLink]="['generators/lorem-ipsum']" [routerLinkActive]="['active']">
-    <i class="material-icons">segment</i> Lorem Ipsum
-  </a>
-</li>
-
-<li>
-  <a [routerLink]="['generators/barcode']" [routerLinkActive]="['active']">
-    <i class="material-icons">qr_code</i> Barcode</a
-  >
-</li>
+@for (stringHash of stringHashs(); track stringHash.link) {
+<li
+  app-menu-item
+  [icon]="stringHash.icon"
+  [label]="stringHash.label"
+  [link]="buildTemplatedLink('string-hash', stringHash.link)"
+></li>
+}
 
 <div class="divider"></div>
 <li class="menu-title"><span>Other Utilities</span></li>
 
-<li>
-  <a [routerLink]="['utils/link-shortener']" [routerLinkActive]="['active']">
-    <i class="material-icons">link</i> Link Shortener
-  </a>
-</li>
+@for (otherUtility of otherUtilities(); track otherUtility.link) {
+<li
+  app-menu-item
+  [icon]="otherUtility.icon"
+  [label]="otherUtility.label"
+  [link]="buildTemplatedLink('utils', otherUtility.link)"
+></li>
+}
 
 <div class="divider"></div>
 <li class="menu-title">
   <span>Configurations</span>
 </li>
 
-<li>
-  <a [routerLink]="['/settings']" [routerLinkActive]="['active']"
-    ><i class="material-icons">settings</i> Settings</a
-  >
-</li>
+<li app-menu-item link="/settings" label="Settings" icon="settings"></li>

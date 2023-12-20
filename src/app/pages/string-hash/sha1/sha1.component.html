@@ -1,0 +1,31 @@
+<!----------------------------------------------------------------------------------------------------------->
+<!-- This Source Code Form is subject to the terms of the Mozilla Public                                   -->
+<!-- License, v. 2.0. If a copy of the MPL was not distributed with this                                   -->
+<!-- file, You can obtain one at http://mozilla.org/MPL/2.0/.                                              -->
+<!----------------------------------------------------------------------------------------------------------->
+<app-generator-card
+  title="SHA-1 Hasher"
+  [toCopy]="hash()"
+  (onGenerate)="onGenerate()"
+  [disableGeneratorBtn]="shouldGeneratedButtonDisabled()"
+>
+  <label class="label">
+    <span class="label-text">Input</span>
+  </label>
+  <input type="text" class="input" [ngModel]="text()" (ngModelChange)="text.set($event)" />
+
+  <label class="label"><span class="label-text">Hash</span></label>
+  <input type="text" class="input" [ngModel]="hash()" disabled />
+
+  <label class="label cursor-pointer justify-start">
+    <input
+      type="checkbox"
+      class="toggle"
+      [ngModel]="uppercase()"
+      (ngModelChange)="uppercase.set($event)"
+    />
+    <span class="label-text">Uppercase</span>
+  </label>
+
+  <div class="separator"></div>
+</app-generator-card>

@@ -1,3 +1,8 @@
+/*************************************************************************************************************
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ ************************************************************************************************************/
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
@@ -11,7 +16,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { ClipboardService } from 'ngx-clipboard';
 import * as anime from 'animejs/lib/anime';
-import { catchError, map, throwError } from 'rxjs';
+import { catchError, finalize, map, tap, throwError } from 'rxjs';
 
 const API_DOMAIN = 'https://is.gd/create.php';
 
@@ -34,11 +39,12 @@ export class LinkShortenerComponent {
 
     public originalLink = signal('');
     public shortenLink = signal('');
+    public isLoading = signal(false);
 
     onShorten() {
-        console.log('clicked');
         if (!this.originalLink()) return;
 
+        this.isLoading.set(true);
         const domain = new URL(API_DOMAIN);
         domain.searchParams.set('format', 'json');
         domain.searchParams.set('url', this.originalLink());
@@ -49,14 +55,14 @@ export class LinkShortenerComponent {
                 map((res: any) => {
                     if ('shorturl' in res) return res.shorturl;
 
-                    return throwError(
-                        () => new Error(`${res.errormessage} (code ${res.errorcode})`)
-                    );
+                    let errorMessage = `${res.errormessage} (code ${res.errorcode})`;
+                    throw new Error(errorMessage);
                 }),
                 catchError((error: HttpErrorResponse) => {
                     this.popupErrorOccurred();
                     return throwError(() => new Error(error.message));
-                })
+                }),
+                finalize(() => this.isLoading.set(false))
             )
             .subscribe(link => this.shortenLink.set(link));
     }
