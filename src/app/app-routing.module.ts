@@ -43,8 +43,9 @@ export const routes: Routes = [
     },
     {
         path: 'utils/link-shortener',
-        loadChildren: () =>
-            import('./pages/string-hash/string-hash.module').then(m => m.StringHashModule),
+        loadComponent: async () =>
+            (await import('./pages/utils/link-shortener/link-shortener.component'))
+                .LinkShortenerComponent,
     },
     {
         path: 'settings',
