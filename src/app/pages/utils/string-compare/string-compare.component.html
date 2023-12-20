@@ -14,12 +14,17 @@
     (ngModelChange)="rightHandSide.set($event)"
   />
 
-  @if (stringMatch() != null) { @if (stringMatch() === true) {
+  @if (stringMatch() != null) { @if (stringMatch() === 0) {
   <div class="text-success status-message">
     <span class="material-icons">check_circle</span> Match
   </div>
   } @else {
   <div class="text-error status-message"><span class="material-icons">cancel</span> Not Match</div>
+  <div>
+    Match pattern:
+    <span class="text-success">{{missMatchPattern().match}}</span
+    ><span class="text-error">{{missMatchPattern().unmatch}}</span>
+  </div>
   } }
 
   <div class="spacer"></div>
