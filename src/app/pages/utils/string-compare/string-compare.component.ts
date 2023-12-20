@@ -1,10 +1,11 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
 
 type MissMatchPattern = {
     match: string;
     unmatch: string;
+    outOfSyncChar: string;
 };
 
 @Component({
@@ -18,13 +19,31 @@ export class StringCompareComponent {
     public stringMatch = signal<number | null>(null);
     public leftHandSide = signal('');
     public rightHandSide = signal('');
-    public missMatchPattern = signal<MissMatchPattern>({ match: '', unmatch: '' });
+    public compareOriginal = signal(false);
+    public lengthDiff = signal(0);
+    public missMatchPattern = signal<MissMatchPattern>({
+        match: '',
+        unmatch: '',
+        outOfSyncChar: '',
+    });
+
+    public originalPattern = computed(
+        (): MissMatchPattern => ({
+            match: this.leftHandSide().substring(0, this.stringMatch()! - 1),
+            unmatch: this.leftHandSide().substring(
+                Math.min(this.stringMatch()!),
+                this.leftHandSide().length
+            ),
+            outOfSyncChar: this.leftHandSide()[this.stringMatch()! - 1],
+        })
+    );
 
     public getResult() {
         this.compareStrings();
         this.missMatchPattern.set({
             match: this.getMatchedCharacters(),
             unmatch: this.getUnmatchedCharacters(),
+            outOfSyncChar: this.getUnmatchedCharacter(),
         });
     }
 
@@ -37,7 +56,28 @@ export class StringCompareComponent {
     }
 
     public getUnmatchedCharacters() {
-        return this.rightHandSide().substring(this.stringMatch()! - 1);
+        return this.rightHandSide().substring(
+            Math.min(this.stringMatch()!),
+            this.rightHandSide().length
+        );
+    }
+
+    public getUnmatchedCharacter() {
+        return this.rightHandSide()[this.stringMatch()! - 1];
+    }
+
+    public getErrorDescription() {
+        if (this.stringMatch() == null) return '';
+
+        if (this.lengthDiff() > 0) {
+            return 'Length mismatch: Left hand side is longer than Right hand side';
+        } else if (this.lengthDiff() < 0) {
+            return 'Length mismatch: Right hand side is longer than Left hand side';
+        }
+
+        return `Content mismatch: First mismatch located at position ${
+            this.stringMatch() ?? 0
+        } of right hand side which is '${this.rightHandSide()[(this.stringMatch() ?? 1) - 1]}'`;
     }
 
     @HostListener('document:keypress', ['$event'])
@@ -55,6 +95,14 @@ export class StringCompareComponent {
 
     private compareStrings() {
         if (this.leftHandSide() == '' && this.rightHandSide() == '') return;
+
+        const sizeDiff = this.leftHandSide().length - this.rightHandSide().length;
+        this.lengthDiff.set(sizeDiff);
+
+        if (sizeDiff !== 0) {
+            this.stringMatch.set(Math.min(this.leftHandSide().length, this.rightHandSide().length));
+            return;
+        }
 
         if (this.leftHandSide() === this.rightHandSide()) {
             this.stringMatch.set(0);

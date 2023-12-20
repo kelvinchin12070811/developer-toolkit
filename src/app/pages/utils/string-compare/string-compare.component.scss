@@ -5,3 +5,7 @@
 .status-message {
     @apply flex flex-row align-middle gap-1;
 }
+
+.toggle {
+    @apply rounded-3xl mr-2;
+}
