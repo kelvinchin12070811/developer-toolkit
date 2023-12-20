@@ -1,17 +1,13 @@
-<app-generator-card
-  title="UUID Generator"
-  (onGenerate)="genUUID()"
-  [toCopy]="getGeneratedUUID()"
->
+<!----------------------------------------------------------------------------------------------------------->
+<!-- This Source Code Form is subject to the terms of the Mozilla Public                                   -->
+<!-- License, v. 2.0. If a copy of the MPL was not distributed with this                                   -->
+<!-- file, You can obtain one at http://mozilla.org/MPL/2.0/.                                              -->
+<!----------------------------------------------------------------------------------------------------------->
+<app-generator-card title="UUID Generator" (onGenerate)="genUUID()" [toCopy]="getGeneratedUUID()">
   <label class="label">
     <span class="label-text">UUID</span>
   </label>
-  <input
-    type="text"
-    class="input input-bordered"
-    [ngModel]="getGeneratedUUID()"
-    disabled
-  />
+  <input type="text" class="input input-bordered" [ngModel]="getGeneratedUUID()" disabled />
   <section class="uuid-options">
     <label class="label cursor-pointer justify-start">
       <input
