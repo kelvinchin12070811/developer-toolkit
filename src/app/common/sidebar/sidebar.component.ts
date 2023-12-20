@@ -47,6 +47,11 @@ export class SidebarComponent {
 
     public stringHashs = signal<MenuItem[]>([
         {
+            label: 'SHA-3',
+            link: 'sha3',
+            icon: 'fingerprint',
+        },
+        {
             label: 'MD5',
             link: 'md5',
             icon: 'fingerprint',
