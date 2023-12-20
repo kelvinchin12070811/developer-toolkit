@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SHA1, enc } from 'crypto-js';
 import { GeneratorCardComponent } from 'src/app/common/generator-card/generator-card.component';
@@ -19,7 +19,6 @@ export class Sha1Component {
         return this.text() === '';
     }
 
-    @HostListener('document:keydown.enter', ['$event'])
     public onGenerate() {
         if (this.text() === '') return;
 

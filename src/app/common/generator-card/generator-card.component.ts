@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Inject, Input, Output, inject, signal } from '@angular/core';
+import {
+    Component,
+    EventEmitter,
+    HostListener,
+    Input,
+    Output,
+    inject,
+    signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerCardComponent } from '../container-card/container-card.component';
 import { ClipboardModule, ClipboardService } from 'ngx-clipboard';
@@ -20,6 +28,7 @@ export class GeneratorCardComponent {
     @Output() public onGenerate: EventEmitter<any> = new EventEmitter();
     isCopiedToastVisible = signal(false);
 
+    @HostListener('document:keydown.enter', ['$event'])
     emitOnGenerate() {
         this.onGenerate.emit();
     }

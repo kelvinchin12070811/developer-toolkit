@@ -1,4 +1,4 @@
-import { Component, HostListener, effect, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { GeneratorCardComponent } from 'src/app/common/generator-card/generator-card.component';
 import { MD5, enc } from 'crypto-js';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +19,6 @@ export class Md5Component {
         return this.text() === '';
     }
 
-    @HostListener('document:keydown.enter', ['$event'])
     public onGenerate() {
         if (this.text() === '') return;
 
