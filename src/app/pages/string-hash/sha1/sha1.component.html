@@ -1,0 +1,21 @@
+<app-generator-card title="SHA-1 Hasher" [toCopy]="hash()" (onGenerate)="onGenerate()">
+  <label class="label">
+    <span class="label-text">Text</span>
+  </label>
+  <input type="text" class="input" [ngModel]="text()" (ngModelChange)="text.set($event)" />
+
+  <label class="label"><span class="label-text">Hash</span></label>
+  <input type="text" class="input" [ngModel]="hash()" disabled />
+
+  <label class="label cursor-pointer">
+    <input
+      type="checkbox"
+      class="toggle"
+      [ngModel]="uppercase()"
+      (ngModelChange)="uppercase.set($event)"
+    />
+    <span class="label-text">Uppercase</span>
+  </label>
+
+  <div class="separator"></div>
+</app-generator-card>

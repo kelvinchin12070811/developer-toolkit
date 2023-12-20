@@ -51,6 +51,11 @@ export class SidebarComponent {
             link: 'md5',
             icon: 'fingerprint',
         },
+        {
+            label: 'SHA-1',
+            link: 'sha1',
+            icon: 'fingerprint',
+        },
     ]);
 
     public otherUtilities = signal<MenuItem[]>([
