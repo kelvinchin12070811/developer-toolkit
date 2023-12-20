@@ -14,15 +14,15 @@
     (ngModelChange)="rightHandSide.set($event)"
   />
 
-  <!-- <label class="label cursor-pointer justify-start">
+  <label class="label cursor-pointer justify-start">
     <input
       type="checkbox"
       class="toggle"
-      [ngModel]="compareOriginal()"
-      (ngModelChange)="compareOriginal.set($event)"
+      [ngModel]="ignoreCase()"
+      (ngModelChange)="ignoreCase.set($event)"
     />
     <span class="label-text text-left">Ignore case</span>
-  </label> -->
+  </label>
 
   <label class="label cursor-pointer justify-start">
     <input
@@ -44,17 +44,21 @@
     <span class="material-icons">cancel</span> {{getErrorDescription()}}
   </div>
   <div>
-    <div>Match pattern:</div>
-    <span class="text-success break-words">{{missMatchPattern().match}}</span
-    ><span class="text-error-content bg-error">{{missMatchPattern().outOfSyncChar}}</span
-    ><span class="text-error break-words">{{missMatchPattern().unmatch}}</span>
+    <div class="match-pattern">
+      <div>Match pattern:</div>
+      <span class="text-success whitespace-pre">{{missMatchPattern().match}}</span
+      ><span class="text-error-content bg-error whitespace-pre"
+        >{{missMatchPattern().outOfSyncChar}}</span
+      ><span class="text-error whitespace-pre">{{missMatchPattern().unmatch}}</span>
 
-    @if (compareOriginal()) {
-    <div>Compare to original:</div>
-    <span class="break-words">{{originalPattern().match}}</span
-    ><span class="bg-info text-info-content">{{originalPattern().outOfSyncChar}}</span
-    ><span class="break-words">{{originalPattern().unmatch}}</span>
-    }
+      @if (compareOriginal()) {
+      <div>Compare to original:</div>
+      <span class="whitespace-pre">{{originalPattern().match}}</span
+      ><span class="bg-info text-info-content whitespace-pre"
+        >{{originalPattern().outOfSyncChar}}</span
+      ><span class="whitespace-pre">{{originalPattern().unmatch}}</span>
+      }
+    </div>
   </div>
   } }
 

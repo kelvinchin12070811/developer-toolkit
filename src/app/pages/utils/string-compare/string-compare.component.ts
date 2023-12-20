@@ -1,4 +1,4 @@
-import { Component, HostListener, computed, signal } from '@angular/core';
+import { Component, HostListener, computed, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
 
@@ -20,6 +20,7 @@ export class StringCompareComponent {
     public leftHandSide = signal('');
     public rightHandSide = signal('');
     public compareOriginal = signal(false);
+    public ignoreCase = signal(false);
     public lengthDiff = signal(0);
     public missMatchPattern = signal<MissMatchPattern>({
         match: '',
@@ -27,23 +28,30 @@ export class StringCompareComponent {
         outOfSyncChar: '',
     });
 
-    public originalPattern = computed(
-        (): MissMatchPattern => ({
-            match: this.leftHandSide().substring(0, this.stringMatch()! - 1),
-            unmatch: this.leftHandSide().substring(
-                Math.min(this.stringMatch()!),
-                this.leftHandSide().length
-            ),
-            outOfSyncChar: this.leftHandSide()[this.stringMatch()! - 1],
-        })
-    );
+    public originalPattern = signal<MissMatchPattern>({
+        match: '',
+        unmatch: '',
+        outOfSyncChar: '',
+    });
+
+    constructor() {
+        effect(() => console.log({ rhs: this.missMatchPattern, lhs: this.originalPattern }));
+    }
 
     public getResult() {
         this.compareStrings();
         this.missMatchPattern.set({
-            match: this.getMatchedCharacters(),
-            unmatch: this.getUnmatchedCharacters(),
-            outOfSyncChar: this.getUnmatchedCharacter(),
+            match: this.getMatchedCharacters(this.rightHandSide(), this.stringMatch() ?? 1),
+            unmatch: this.getUnmatchedCharacters(this.rightHandSide(), this.stringMatch() ?? 1),
+            outOfSyncChar: this.getUnmatchedCharacter(
+                this.rightHandSide(),
+                this.stringMatch() ?? 1
+            ),
+        });
+        this.originalPattern.set({
+            match: this.getMatchedCharacters(this.leftHandSide(), this.stringMatch() ?? 1),
+            unmatch: this.getUnmatchedCharacters(this.leftHandSide(), this.stringMatch() ?? 1),
+            outOfSyncChar: this.getUnmatchedCharacter(this.leftHandSide(), this.stringMatch() ?? 1),
         });
     }
 
@@ -51,28 +59,29 @@ export class StringCompareComponent {
         return this.leftHandSide() == '' || this.rightHandSide() == '';
     }
 
-    public getMatchedCharacters() {
-        return this.rightHandSide().substring(0, this.stringMatch()! - 1);
+    public getMatchedCharacters(text: string, stringCompare: number) {
+        return text.substring(0, stringCompare - 1);
     }
 
-    public getUnmatchedCharacters() {
-        return this.rightHandSide().substring(
-            Math.min(this.stringMatch()!),
-            this.rightHandSide().length
-        );
+    public getUnmatchedCharacters(text: string, stringCompare: number) {
+        return text.substring(stringCompare, text.length);
     }
 
-    public getUnmatchedCharacter() {
-        return this.rightHandSide()[this.stringMatch()! - 1];
+    public getUnmatchedCharacter(text: string, stringCompare: number) {
+        return text[stringCompare - 1];
     }
 
     public getErrorDescription() {
         if (this.stringMatch() == null) return '';
 
         if (this.lengthDiff() > 0) {
-            return 'Length mismatch: Left hand side is longer than Right hand side';
+            return `Length mismatch: Left hand side is longer than Right hand side by ${Math.abs(
+                this.lengthDiff()
+            )} character(s)`;
         } else if (this.lengthDiff() < 0) {
-            return 'Length mismatch: Right hand side is longer than Left hand side';
+            return `Length mismatch: Right hand side is longer than Left hand side by ${Math.abs(
+                this.lengthDiff()
+            )} character(s)`;
         }
 
         return `Content mismatch: First mismatch located at position ${
@@ -94,32 +103,38 @@ export class StringCompareComponent {
     }
 
     private compareStrings() {
-        if (this.leftHandSide() == '' && this.rightHandSide() == '') return;
+        let lhs = this.leftHandSide();
+        let rhs = this.rightHandSide();
 
-        const sizeDiff = this.leftHandSide().length - this.rightHandSide().length;
-        this.lengthDiff.set(sizeDiff);
+        if (this.ignoreCase()) {
+            lhs = lhs.toLowerCase();
+            rhs = rhs.toLowerCase();
+        }
 
-        if (sizeDiff !== 0) {
-            this.stringMatch.set(Math.min(this.leftHandSide().length, this.rightHandSide().length));
+        if (lhs == '' && rhs == '') {
             return;
         }
 
-        if (this.leftHandSide() === this.rightHandSide()) {
+        if (lhs === rhs) {
             this.stringMatch.set(0);
             return;
         }
 
-        for (
-            let i = 0;
-            i < Math.min(this.leftHandSide().length, this.rightHandSide().length);
-            i++
-        ) {
-            if (this.leftHandSide()[i] !== this.rightHandSide()[i]) {
+        const sizeDiff = lhs.length - rhs.length;
+        this.lengthDiff.set(sizeDiff);
+
+        if (sizeDiff !== 0) {
+            this.stringMatch.set(Math.min(lhs.length, rhs.length) + 1);
+            return;
+        }
+
+        for (let i = 0; i < Math.min(lhs.length, rhs.length); i++) {
+            if (lhs[i] !== rhs[i]) {
                 this.stringMatch.set(i + 1);
                 return;
             }
         }
 
-        this.stringMatch.set(Math.min(this.leftHandSide().length, this.rightHandSide().length) + 1);
+        this.stringMatch.set(Math.min(lhs.length, rhs.length) + 1);
     }
 }
