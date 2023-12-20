@@ -1,4 +1,9 @@
-<app-generator-card title="MD5 Hasher" [toCopy]="hash()" (onGenerate)="onGenerate()">
+<app-generator-card
+  title="MD5 Hasher"
+  [toCopy]="hash()"
+  (onGenerate)="onGenerate()"
+  [disableGeneratorBtn]="shouldGenerateBtnDisabled()"
+>
   <label class="label">
     <span class="label-text">Text</span>
   </label>

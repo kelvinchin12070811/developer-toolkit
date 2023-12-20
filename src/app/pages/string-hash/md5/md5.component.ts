@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, HostListener, effect, signal } from '@angular/core';
 import { GeneratorCardComponent } from 'src/app/common/generator-card/generator-card.component';
 import { MD5, enc } from 'crypto-js';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +15,14 @@ export class Md5Component {
     public hash = signal('');
     public uppercase = signal(false);
 
-    onGenerate() {
+    public shouldGenerateBtnDisabled() {
+        return this.text() === '';
+    }
+
+    @HostListener('document:keydown.enter', ['$event'])
+    public onGenerate() {
+        if (this.text() === '') return;
+
         const md5 = MD5(this.text()).toString(enc.Hex);
         if (this.uppercase()) this.hash.set(md5.toUpperCase());
         else this.hash.set(md5.toLowerCase());
