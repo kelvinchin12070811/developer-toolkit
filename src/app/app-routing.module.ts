@@ -8,33 +8,9 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
     },
     {
-        path: 'generators/uuid',
-        loadComponent: () =>
-            import('./pages/generators/uuid/uuid.component').then(m => m.UuidComponent),
-    },
-    {
-        path: 'generators/timestamp',
-        loadComponent: () =>
-            import('./pages/generators/timestamp/timestamp.component').then(
-                m => m.TimestampComponent
-            ),
-    },
-    {
-        path: 'generators/char',
-        loadComponent: () =>
-            import('./pages/generators/char/char.component').then(m => m.CharComponent),
-    },
-    {
-        path: 'generators/lorem-ipsum',
-        loadComponent: () =>
-            import('./pages/generators/lorem-ipsum/lorem-ipsum.component').then(
-                m => m.LoremIpsumComponent
-            ),
-    },
-    {
-        path: 'generators/barcode',
-        loadComponent: () =>
-            import('./pages/generators/barcodes/barcodes.component').then(m => m.BarcodesComponent),
+        path: 'generators',
+        loadChildren: async () =>
+            (await import('./pages/generators/generators.module')).GeneratorsModule,
     },
     {
         path: 'string-hash',
@@ -42,10 +18,8 @@ export const routes: Routes = [
             (await import('./pages/string-hash/string-hash.module')).StringHashModule,
     },
     {
-        path: 'utils/link-shortener',
-        loadComponent: async () =>
-            (await import('./pages/utils/link-shortener/link-shortener.component'))
-                .LinkShortenerComponent,
+        path: 'utils',
+        loadChildren: async () => (await import('./pages/utils/utils.module')).UtilsModule,
     },
     {
         path: 'settings',
