@@ -14,6 +14,10 @@ const routes: Routes = [
         path: 'sha3',
         loadComponent: async () => (await import('./sha3/sha3.component')).Sha3Component,
     },
+    {
+        path: 'sha2',
+        loadComponent: async () => (await import('./sha2/sha2.component')).Sha2Component,
+    },
 ];
 
 @NgModule({

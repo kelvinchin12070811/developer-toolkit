@@ -52,6 +52,11 @@ export class SidebarComponent {
             icon: 'fingerprint',
         },
         {
+            label: 'SHA-2',
+            link: 'sha2',
+            icon: 'fingerprint',
+        },
+        {
             label: 'MD5',
             link: 'md5',
             icon: 'fingerprint',

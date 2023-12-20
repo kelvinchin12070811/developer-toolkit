@@ -24,8 +24,6 @@ export class Sha3Component {
     public onGenerate() {
         if (this.text() === '') return;
 
-        console.log(this.text());
-
         const sha3 = SHA3(this.text(), { outputLength: this.outputLength() }).toString(enc.Hex);
         if (this.uppercase()) this.hash.set(sha3.toUpperCase());
         else this.hash.set(sha3.toLowerCase());
