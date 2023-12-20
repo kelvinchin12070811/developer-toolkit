@@ -1,0 +1,33 @@
+<app-container-card title="String Compare">
+  <label class="label"><span class="label-text">Left hand side</span></label>
+  <input
+    type="text"
+    class="input"
+    [ngModel]="leftHandSide()"
+    (ngModelChange)="leftHandSide.set($event)"
+  />
+  <label class="label"><span class="label-text">Right hand side</span></label>
+  <input
+    type="text"
+    class="input"
+    [ngModel]="rightHandSide()"
+    (ngModelChange)="rightHandSide.set($event)"
+  />
+
+  @if (stringMatch() != null) { @if (stringMatch() === true) {
+  <div class="text-success status-message">
+    <span class="material-icons">check_circle</span> Match
+  </div>
+  } @else {
+  <div class="text-error status-message"><span class="material-icons">cancel</span> Not Match</div>
+  } }
+
+  <div class="spacer"></div>
+
+  <div class="button-group">
+    <button class="btn" (click)="reset()">Reset</button>
+    <button class="btn btn-primary" (click)="getResult()" [disabled]="shouldCompareBtnDisabled()">
+      Compare
+    </button>
+  </div>
+</app-container-card>

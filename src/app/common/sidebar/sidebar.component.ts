@@ -55,6 +55,11 @@ export class SidebarComponent {
 
     public otherUtilities = signal<MenuItem[]>([
         { label: 'Link Shortener', link: 'link-shortener', icon: 'link' },
+        {
+            label: 'String Compare',
+            link: 'string-compare',
+            icon: 'compare_arrows',
+        },
     ]);
 
     buildTemplatedLink(prefix: string, link: string) {

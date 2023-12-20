@@ -7,6 +7,11 @@ const routes: Routes = [
         loadComponent: async () =>
             (await import('./link-shortener/link-shortener.component')).LinkShortenerComponent,
     },
+    {
+        path: 'string-compare',
+        loadComponent: async () =>
+            (await import('./string-compare/string-compare.component')).StringCompareComponent,
+    },
 ];
 
 @NgModule({
