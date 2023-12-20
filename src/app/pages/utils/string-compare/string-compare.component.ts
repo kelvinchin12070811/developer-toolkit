@@ -115,11 +115,6 @@ export class StringCompareComponent {
             return;
         }
 
-        if (lhs === rhs) {
-            this.stringMatch.set(0);
-            return;
-        }
-
         const sizeDiff = lhs.length - rhs.length;
         this.lengthDiff.set(sizeDiff);
 
@@ -135,6 +130,6 @@ export class StringCompareComponent {
             }
         }
 
-        this.stringMatch.set(Math.min(lhs.length, rhs.length) + 1);
+        this.stringMatch.set(0);
     }
 }
