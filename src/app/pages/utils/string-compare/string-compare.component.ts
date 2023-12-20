@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ContainerCardComponent } from 'src/app/common/container-card/container-card.component';
 
@@ -22,6 +22,13 @@ export class StringCompareComponent {
 
     public shouldCompareBtnDisabled() {
         return this.leftHandSide() == '' || this.rightHandSide() == '';
+    }
+
+    @HostListener('document:keypress', ['$event'])
+    public triggeredByEnterKey(ev: KeyboardEvent) {
+        if (ev.key !== 'Enter') return;
+
+        this.getResult();
     }
 
     public reset() {
