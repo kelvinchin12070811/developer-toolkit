@@ -12,6 +12,20 @@
   <label class="label"><span class="label-text">Hash</span></label>
   <input type="text" class="input" [ngModel]="hash()" disabled />
 
+  <div class="label">
+    <span class="label-text">Length</span>
+  </div>
+  <select
+    class="select select-bordered w-full"
+    [ngModel]="outputLength()"
+    (ngModelChange)="onOutputLengthChanged($event)"
+  >
+    <option value="224" [defaultSelected]="true">224</option>
+    <option value="256">256</option>
+    <option value="384">384</option>
+    <option value="512">512</option>
+  </select>
+
   <label class="label cursor-pointer justify-start">
     <input
       type="checkbox"

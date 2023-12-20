@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SHA3, enc } from 'crypto-js';
 import { GeneratorCardComponent } from 'src/app/common/generator-card/generator-card.component';
@@ -27,8 +27,11 @@ export class Sha3Component {
         console.log(this.text());
 
         const sha3 = SHA3(this.text(), { outputLength: this.outputLength() }).toString(enc.Hex);
-        console.log(sha3);
         if (this.uppercase()) this.hash.set(sha3.toUpperCase());
         else this.hash.set(sha3.toLowerCase());
+    }
+
+    public onOutputLengthChanged(value: string) {
+        this.outputLength.set(parseInt(value));
     }
 }
