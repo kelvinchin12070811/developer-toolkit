@@ -5,14 +5,14 @@
   [disableGeneratorBtn]="shouldGeneratedButtonDisabled()"
 >
   <label class="label">
-    <span class="label-text">Text</span>
+    <span class="label-text">Input</span>
   </label>
   <input type="text" class="input" [ngModel]="text()" (ngModelChange)="text.set($event)" />
 
   <label class="label"><span class="label-text">Hash</span></label>
   <input type="text" class="input" [ngModel]="hash()" disabled />
 
-  <label class="label cursor-pointer">
+  <label class="label cursor-pointer justify-start">
     <input
       type="checkbox"
       class="toggle"
