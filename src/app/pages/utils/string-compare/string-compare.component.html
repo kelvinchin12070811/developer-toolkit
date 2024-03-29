@@ -51,17 +51,17 @@
   <div>
     <div class="match-pattern">
       <div>Match pattern:</div>
-      <span class="text-success whitespace-pre">{{missMatchPattern().match}}</span
-      ><span class="text-error-content bg-error whitespace-pre"
+      <span class="text-success ">{{missMatchPattern().match}}</span
+      ><span class="text-error-content bg-error "
         >{{missMatchPattern().outOfSyncChar}}</span
-      ><span class="text-error whitespace-pre">{{missMatchPattern().unmatch}}</span>
+      ><span class="text-error ">{{missMatchPattern().unmatch}}</span>
 
       @if (compareOriginal()) {
       <div>Compare to reference:</div>
-      <span class="whitespace-pre">{{originalPattern().match}}</span
-      ><span class="bg-info text-info-content whitespace-pre"
+      <span class="">{{originalPattern().match}}</span
+      ><span class="bg-info text-info-content "
         >{{originalPattern().outOfSyncChar}}</span
-      ><span class="whitespace-pre">{{originalPattern().unmatch}}</span>
+      ><span class="">{{originalPattern().unmatch}}</span>
       }
     </div>
   </div>
