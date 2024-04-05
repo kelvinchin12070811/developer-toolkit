@@ -4229,6 +4229,7 @@ __metadata:
     tslib: "npm:^2.3.0"
     typescript: "npm:~5.2.2"
     uuid: "npm:^9.0.0"
+    uuidv7: "npm:^0.6.3"
     zone.js: "npm:~0.14.2"
   languageName: unknown
   linkType: soft
@@ -9185,6 +9186,15 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: 9d0b6adb72b736e36f2b1b53da0d559125ba3e39d913b6072f6f033e0c87835b414f0836b45bcfaf2bdf698f92297fea1c3cc19b0b258bc182c9c43cc0fab9f2
+  languageName: node
+  linkType: hard
+
+"uuidv7@npm:^0.6.3":
+  version: 0.6.3
+  resolution: "uuidv7@npm:0.6.3"
+  bin:
+    uuidv7: cli.js
+  checksum: 71cc8e22a573608162cf4eea7d3e7a433173ae08c662b96a5d07f61da5466cd25c3b8374bf4cbb179acda2c3540f84e7466b50dfcde6a98b3fb4293142f0d6d6
   languageName: node
   linkType: hard
 
