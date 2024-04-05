@@ -29,6 +29,11 @@ export class SidebarComponent {
             icon: 'label_important',
         },
         {
+            label: 'UUIDv7',
+            link: 'uuidv7',
+            icon: 'label_important',
+        },
+        {
             label: 'Timestamp',
             icon: 'alarm',
             link: 'timestamp',

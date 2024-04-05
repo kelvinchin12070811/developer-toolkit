@@ -12,6 +12,10 @@ const routes: Routes = [
         loadComponent: async () => (await import('./uuid/uuid.component')).UuidComponent,
     },
     {
+        path: 'uuidv7',
+        loadComponent: async () => (await import('./uuidv7/uuidv7.component')).Uuidv7Component,
+    },
+    {
         path: 'timestamp',
         loadComponent: async () =>
             (await import('./timestamp/timestamp.component')).TimestampComponent,
