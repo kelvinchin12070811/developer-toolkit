@@ -17,6 +17,11 @@ const routes: Routes = [
         loadComponent: async () =>
             (await import('./string-compare/string-compare.component')).StringCompareComponent,
     },
+    {
+        path: 'base64-encode',
+        loadComponent: async () =>
+            (await import('./base64-encoder/base64-encoder.component')).Base64EncoderComponent,
+    },
 ];
 
 @NgModule({
