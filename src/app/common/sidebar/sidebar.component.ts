@@ -55,6 +55,14 @@ export class SidebarComponent {
         },
     ]);
 
+    public encoders = signal<MenuItem[]>([
+        {
+            label: 'Base64',
+            link: 'base64',
+            icon: 'abc',
+        }
+    ])
+
     public stringHashs = signal<MenuItem[]>([
         {
             label: 'SHA-3',
