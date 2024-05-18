@@ -10,7 +10,12 @@
   [toCopy]="base64String()"
 >
   <label class="label"><span class="label-text">Text to encode (UTF-8 only)</span></label>
-  <textarea class="textarea" [ngModel]="input()" (ngModelChange)="input.set($event)"></textarea>
+  <textarea
+    class="textarea"
+    [ngModel]="input()"
+    (ngModelChange)="input.set($event)"
+    placeholder="Hello World!"
+  ></textarea>
 
   <label class="label"><span class="label-text">Result</span></label>
   <textarea
