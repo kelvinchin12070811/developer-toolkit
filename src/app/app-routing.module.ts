@@ -18,8 +18,11 @@ export const routes: Routes = [
     },
     {
         path: 'encoders',
-        loadChildren: async () =>
-            (await import('./pages/encoders/encoders.module')).EncodersModule,
+        loadChildren: async () => (await import('./pages/encoders/encoders.module')).EncodersModule,
+    },
+    {
+        path: 'decoders',
+        loadChildren: async () => (await import('./pages/decoders/decoders.module')).DecodersModule,
     },
     {
         path: 'string-hash',
