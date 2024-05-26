@@ -17,6 +17,14 @@ export const routes: Routes = [
             (await import('./pages/generators/generators.module')).GeneratorsModule,
     },
     {
+        path: 'encoders',
+        loadChildren: async () => (await import('./pages/encoders/encoders.module')).EncodersModule,
+    },
+    {
+        path: 'decoders',
+        loadChildren: async () => (await import('./pages/decoders/decoders.module')).DecodersModule,
+    },
+    {
         path: 'string-hash',
         loadChildren: async () =>
             (await import('./pages/string-hash/string-hash.module')).StringHashModule,

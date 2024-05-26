@@ -1,0 +1,28 @@
+<!----------------------------------------------------------------------------------------------------------->
+<!-- This Source Code Form is subject to the terms of the Mozilla Public                                   -->
+<!-- License, v. 2.0. If a copy of the MPL was not distributed with this                                   -->
+<!-- file, You can obtain one at http://mozilla.org/MPL/2.0/.                                              -->
+<!----------------------------------------------------------------------------------------------------------->
+<app-generator-card
+  title="Base64 Encoder"
+  generateButtonLabel="Encode"
+  (onGenerate)="onGenerate()"
+  [toCopy]="base64String()"
+>
+  <label class="label"><span class="label-text">Text to encode (UTF-8 only)</span></label>
+  <textarea
+    class="textarea"
+    [ngModel]="input()"
+    (ngModelChange)="input.set($event)"
+    placeholder="Hello World!"
+  ></textarea>
+
+  <label class="label"><span class="label-text">Result</span></label>
+  <textarea
+    class="textarea"
+    [disabled]="true"
+    [ngModel]="base64String()"
+    (ngModelChange)="base64String.set($event)"
+  ></textarea>
+  <div class="mb-2"></div>
+</app-generator-card>

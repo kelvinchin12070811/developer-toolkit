@@ -24,6 +24,30 @@
 }
 
 <div class="divider"></div>
+<li class="menu-title"><span>Encoders</span></li>
+
+@for (encoder of encoders(); track encoder.link) {
+<li
+  app-menu-item
+  [icon]="encoder.icon"
+  [label]="encoder.label"
+  [link]="buildTemplatedLink('encoders', encoder.link)"
+></li>
+}
+
+<div class="divider"></div>
+<li class="menu-title"><span>Decoders</span></li>
+
+@for (decoder of decoders(); track decoder.link) {
+<li
+  app-menu-item
+  [icon]="decoder.icon"
+  [label]="decoder.label"
+  [link]="buildTemplatedLink('decoders', decoder.link)"
+></li>
+}
+
+<div class="divider"></div>
 <li class="menu-title"><span>String Hasher</span></li>
 
 @for (stringHash of stringHashs(); track stringHash.link) {

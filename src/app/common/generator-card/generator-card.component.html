@@ -10,7 +10,7 @@
     <input *ngIf="!noCopy" type="button" value="Copy" class="btn" (click)="onCopy()" />
     <input
       type="button"
-      value="Generate"
+      [value]="generateButtonLabel"
       [ngClass]="{'longer-btn': noCopy}"
       class="btn btn-primary"
       [disabled]="disableGeneratorBtn"
