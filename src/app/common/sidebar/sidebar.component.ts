@@ -59,7 +59,7 @@ export class SidebarComponent {
         {
             label: 'Base64',
             link: 'base64',
-            icon: 'abc',
+            icon: 'factory',
         },
     ]);
 
@@ -67,7 +67,7 @@ export class SidebarComponent {
         {
             label: 'Base64',
             link: 'base64',
-            icon: 'abc',
+            icon: 'factory',
         },
     ]);
 
