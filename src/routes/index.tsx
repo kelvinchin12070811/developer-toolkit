@@ -5,11 +5,13 @@ import { SettingsPage } from '@/pages/Settings';
 import { UUIDGeneratorPage } from '@/pages/generators/uuid.tsx';
 import { ULIDGeneratorPage } from '@/pages/generators/ulid.tsx';
 import { TimestampGeneratorPage } from '@/pages/generators/Timestamp.tsx';
+import { CharactersGeneratorPage } from '@/pages/generators/Characters.tsx';
 
 export function RoutesDefinitions() {
   return (
     <Routes>
       <Route path="/" element={<IndexPage />} />
+      <Route path="/generators/characters" element={<CharactersGeneratorPage />} />
       <Route path="/generators/timestamp" element={<TimestampGeneratorPage />} />
       <Route path="/generators/ulid" element={<ULIDGeneratorPage />} />
       <Route path="/generators/uuid" element={<UUIDGeneratorPage />} />
