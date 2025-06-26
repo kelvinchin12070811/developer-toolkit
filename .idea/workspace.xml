@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab1db110-764a-4cb3-a8bc-d7c66ddfc3a8" name="Changes" comment="Implement theme settings functionality; add ContainerCard component and theme persistence with Zustand">
-      <change afterPath="$PROJECT_DIR$/src/components/ui/GeneratorCard/index.tsx" afterDir="false" />
+    <list default="true" id="ab1db110-764a-4cb3-a8bc-d7c66ddfc3a8" name="Changes" comment="Add UUID generator page and integrate GeneratorCard component; implement clipboard copy functionality">
+      <change afterPath="$PROJECT_DIR$/src/pages/generators/ulid.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/ContainerCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/ContainerCard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/GeneratorCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/GeneratorCard/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +69,7 @@
       <workItem from="1750774972003" duration="70000" />
       <workItem from="1750775077320" duration="6478000" />
       <workItem from="1750949743969" duration="3540000" />
-      <workItem from="1750953387719" duration="3207000" />
+      <workItem from="1750953387719" duration="3530000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize React project with Vite, TypeScript, and Tailwind CSS setup">
       <option name="closed" value="true" />
@@ -113,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750953064384</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add UUID generator page and integrate GeneratorCard component; implement clipboard copy functionality">
+      <option name="closed" value="true" />
+      <created>1750956768621</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1750956768621</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +142,7 @@
     <MESSAGE value="Refactor DrawerContent to use MenuItem component; add utility for class name merging" />
     <MESSAGE value="Add Settings page and update routing; enhance DrawerContent with configuration menu" />
     <MESSAGE value="Implement theme settings functionality; add ContainerCard component and theme persistence with Zustand" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement theme settings functionality; add ContainerCard component and theme persistence with Zustand" />
+    <MESSAGE value="Add UUID generator page and integrate GeneratorCard component; implement clipboard copy functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add UUID generator page and integrate GeneratorCard component; implement clipboard copy functionality" />
   </component>
 </project>

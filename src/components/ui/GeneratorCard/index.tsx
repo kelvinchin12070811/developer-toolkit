@@ -22,7 +22,6 @@ export function GeneratorCard({ title, children, className, onGenerate, valueToC
     setIsCopied(true);
     try {
       await navigator.clipboard.writeText(valueToCopy);
-      toast.success('Copied to clipboard');
     } catch (error) {
       toast.error('Failed to copy to clipboard');
       console.error(error);
