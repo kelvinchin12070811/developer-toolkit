@@ -10,8 +10,8 @@ export function DrawerContent() {
     <>
       <MenuItem to='/'>{renderMenuIcon(FaHome)} Home</MenuItem>
       <li className='menu-item mt-4 mb-2'>Generators</li>
-      <MenuItem to='/generators/uuid'>{renderMenuIcon(BiSolidTagAlt)} UUID Generator</MenuItem>
       <MenuItem to='/generators/ulid'>{renderMenuIcon(BiSolidTagAlt)} ULID Generator</MenuItem>
+      <MenuItem to='/generators/uuid'>{renderMenuIcon(BiSolidTagAlt)} UUID Generator</MenuItem>
 
       <li className='menu-item mt-4 mb-2'>Configuration</li>
       <MenuItem to='/settings'>{renderMenuIcon(IoSettings)} Settings</MenuItem>
