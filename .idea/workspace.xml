@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab1db110-764a-4cb3-a8bc-d7c66ddfc3a8" name="Changes" comment="Add Characters generator page and update DrawerContent with new menu item">
+    <list default="true" id="ab1db110-764a-4cb3-a8bc-d7c66ddfc3a8" name="Changes" comment="Add Navbar menu button and update ContainerCard styling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/ContainerCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/ContainerCard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/GeneratorCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/GeneratorCard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainDrawer/DrawerContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainDrawer/DrawerContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/generators/Timestamp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/generators/Timestamp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
       <workItem from="1750774972003" duration="70000" />
       <workItem from="1750775077320" duration="6478000" />
       <workItem from="1750949743969" duration="3540000" />
-      <workItem from="1750953387719" duration="7590000" />
+      <workItem from="1750953387719" duration="8160000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize React project with Vite, TypeScript, and Tailwind CSS setup">
       <option name="closed" value="true" />
@@ -157,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750960253536</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add Navbar menu button and update ContainerCard styling">
+      <option name="closed" value="true" />
+      <created>1750961172880</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1750961172880</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +192,7 @@
     <MESSAGE value="Reorder Menu Items" />
     <MESSAGE value="Add Timestamp generator page and update DrawerContent with new menu item" />
     <MESSAGE value="Add Characters generator page and update DrawerContent with new menu item" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Characters generator page and update DrawerContent with new menu item" />
+    <MESSAGE value="Add Navbar menu button and update ContainerCard styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Navbar menu button and update ContainerCard styling" />
   </component>
 </project>

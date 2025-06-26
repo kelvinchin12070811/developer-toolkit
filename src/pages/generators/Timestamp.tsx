@@ -35,7 +35,7 @@ export function TimestampGeneratorPage() {
       </div>
 
       <div>
-        <label className="label mt-4">Format</label>
+        <label className="label">Format</label>
         <select
           className="select w-full"
           value={timestampFormat}
