@@ -55,7 +55,7 @@ export function GeneratorCard({ title, children, className, onGenerate, valueToC
 
   return (<ContainerCard title={title} className={className}>
     {children}
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
+    <section className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 mt-4">
       <button className="btn btn-block" onClick={handleCopy} disabled={isCopied} ref={copyBtnRef}>
         {isCopied ? (<><FaCheck size={16} /> Copied</>) : 'Copy'}
       </button>
