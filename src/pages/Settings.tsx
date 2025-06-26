@@ -9,7 +9,7 @@ export function SettingsPage() {
       <ContainerCard title='Settings'>
         <label className='label'>Theme</label>
         <select className='select w-full' value={theme} onChange={e => setTheme(e.target.value)}>
-          <option disabled selected value=''>
+          <option disabled value=''>
             Select theme
           </option>
           <option value='light'>Light</option>
