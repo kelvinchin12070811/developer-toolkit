@@ -5,7 +5,7 @@ export function Navbar() {
   return (
     <div className='navbar sticky top-0 z-40 bg-base-100 shadow-sm pl-3 pr-3'>
       <div className='flex-1'>
-        <label htmlFor="main-drawer" className="drawer-button btn btn-ghost btn-square lg:hidden">
+        <label htmlFor='main-drawer' className='drawer-button btn btn-ghost btn-square lg:hidden'>
           <MdMenu size={24} />
         </label>
         <a className='btn btn-ghost text-xl font-bold p-1'>/://Developer Toolkit</a>

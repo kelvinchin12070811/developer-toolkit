@@ -17,23 +17,33 @@ export function UUIDGeneratorPage() {
       default:
         return '';
     }
-  }
+  };
 
   return (
-    <GeneratorCard title="UUID Generator" valueToCopy={uuidValue || null} onGenerate={() => {setUuidValue(generateUuid())}}>
+    <GeneratorCard
+      title='UUID Generator'
+      valueToCopy={uuidValue || null}
+      onGenerate={() => {
+        setUuidValue(generateUuid());
+      }}
+    >
       <div>
         <label className='label'>UUID</label>
-        <input className='input w-full' defaultValue={uuidValue}/>
+        <input className='input w-full' defaultValue={uuidValue} />
       </div>
 
       <div>
         <label className='label'>Type</label>
-        <select className='select w-full' value={uuidVersion} onChange={(e) => setUuidVersion(e.target.value)}>
-          <option value="v1">Version 1 (Time-based)</option>
-          <option value="v4">Version 4 (Random)</option>
-          <option value="v7">Version 7 (Unix Epoch Time)</option>
+        <select
+          className='select w-full'
+          value={uuidVersion}
+          onChange={e => setUuidVersion(e.target.value)}
+        >
+          <option value='v1'>Version 1 (Time-based)</option>
+          <option value='v4'>Version 4 (Random)</option>
+          <option value='v7'>Version 7 (Unix Epoch Time)</option>
         </select>
       </div>
     </GeneratorCard>
-  )
+  );
 }

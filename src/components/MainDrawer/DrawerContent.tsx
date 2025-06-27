@@ -24,5 +24,9 @@ export function DrawerContent() {
 }
 
 function renderMenuIcon(Icon: React.ComponentType<{ size?: number }>, size?: number) {
-  return <div className="w-6 flex justify-center"><Icon size={size ?? MENU_ITEM_ICON_SIZE} /></div>;
+  return (
+    <div className='w-6 flex justify-center'>
+      <Icon size={size ?? MENU_ITEM_ICON_SIZE} />
+    </div>
+  );
 }

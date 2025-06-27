@@ -11,7 +11,13 @@ interface GeneratorCardProps {
   valueToCopy?: string | null;
 }
 
-export function GeneratorCard({ title, children, className, onGenerate, valueToCopy }: GeneratorCardProps) {
+export function GeneratorCard({
+  title,
+  children,
+  className,
+  onGenerate,
+  valueToCopy,
+}: GeneratorCardProps) {
   const [isCopied, setIsCopied] = useState(false);
   const generateBtnRef = useRef<HTMLButtonElement>(null);
   const copyBtnRef = useRef<HTMLButtonElement>(null);
@@ -53,13 +59,23 @@ export function GeneratorCard({ title, children, className, onGenerate, valueToC
     };
   });
 
-  return (<ContainerCard title={title} className={className}>
-    {children}
-    <section className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 mt-4">
-      <button className="btn btn-block" onClick={handleCopy} disabled={isCopied} ref={copyBtnRef}>
-        {isCopied ? (<><FaCheck size={16} /> Copied</>) : 'Copy'}
-      </button>
-      <button className="btn btn-primary btn-block" onClick={onGenerate} ref={generateBtnRef}>Generate</button>
-    </section>
-  </ContainerCard>);
+  return (
+    <ContainerCard title={title} className={className}>
+      {children}
+      <section className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 mt-4'>
+        <button className='btn btn-block' onClick={handleCopy} disabled={isCopied} ref={copyBtnRef}>
+          {isCopied ? (
+            <>
+              <FaCheck size={16} /> Copied
+            </>
+          ) : (
+            'Copy'
+          )}
+        </button>
+        <button className='btn btn-primary btn-block' onClick={onGenerate} ref={generateBtnRef}>
+          Generate
+        </button>
+      </section>
+    </ContainerCard>
+  );
 }

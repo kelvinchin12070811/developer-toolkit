@@ -10,12 +10,16 @@ export function ULIDGeneratorPage() {
   };
 
   return (
-    <GeneratorCard title="ULID Generator" valueToCopy={ulidValue || null} onGenerate={() => {
-      setUlidValue(generateUlid());
-    }}>
+    <GeneratorCard
+      title='ULID Generator'
+      valueToCopy={ulidValue || null}
+      onGenerate={() => {
+        setUlidValue(generateUlid());
+      }}
+    >
       <div>
-        <label className="label">ULID Generator</label>
-        <input className="input w-full" defaultValue={ulidValue} readOnly />
+        <label className='label'>ULID Generator</label>
+        <input className='input w-full' defaultValue={ulidValue} readOnly />
       </div>
     </GeneratorCard>
   );

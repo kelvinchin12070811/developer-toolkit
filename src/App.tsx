@@ -16,7 +16,7 @@ function App() {
           <RoutesDefinitions />
         </MainDrawer>
       </BrowserRouter>
-      <ToastContainer position="bottom-right" />
+      <ToastContainer position='bottom-right' />
     </main>
   );
 }
