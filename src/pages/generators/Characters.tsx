@@ -24,6 +24,11 @@ export function CharactersGeneratorPage() {
       ...(shouldGenerateSymbols ? charPool.symbols.split('') : []),
     ].join('');
 
+    if (targetPool.length === 0) {
+      setCharacters(''); // No characters to generate
+      return;
+    }
+
     let result = '';
     for (let i = 0; i < targetLength; i++) {
       const randomIndex = Math.floor(Math.random() * targetPool.length);
