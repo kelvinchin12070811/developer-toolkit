@@ -101,7 +101,7 @@ export function BarcodeGenerator() {
             onClick={openInNewTab}
             title='Click to open in new tab'
           >
-            <img src={generatedBarcode} className='h-20' alt='Generated Barcode' />
+            <img src={generatedBarcode} className='max-h-40' alt='Generated Barcode' />
           </div>
         </div>
       )}
