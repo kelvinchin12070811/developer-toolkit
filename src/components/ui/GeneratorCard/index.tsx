@@ -9,6 +9,7 @@ interface GeneratorCardProps {
   children: React.ReactNode;
   onGenerate?: () => void;
   valueToCopy?: string | null;
+  noCopy?: boolean;
 }
 
 export function GeneratorCard({
@@ -17,6 +18,7 @@ export function GeneratorCard({
   className,
   onGenerate,
   valueToCopy,
+  noCopy = false,
 }: GeneratorCardProps) {
   const [isCopied, setIsCopied] = useState(false);
   const generateBtnRef = useRef<HTMLButtonElement>(null);
@@ -63,15 +65,22 @@ export function GeneratorCard({
     <ContainerCard title={title} className={className}>
       {children}
       <section className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2 mt-4'>
-        <button className='btn btn-block' onClick={handleCopy} disabled={isCopied} ref={copyBtnRef}>
-          {isCopied ? (
-            <>
-              <FaCheck size={16} /> Copied
-            </>
-          ) : (
-            'Copy'
-          )}
-        </button>
+        {!noCopy && (
+          <button
+            className='btn btn-block'
+            onClick={handleCopy}
+            disabled={isCopied}
+            ref={copyBtnRef}
+          >
+            {isCopied ? (
+              <>
+                <FaCheck size={16} /> Copied
+              </>
+            ) : (
+              'Copy'
+            )}
+          </button>
+        )}
         <button className='btn btn-primary btn-block' onClick={onGenerate} ref={generateBtnRef}>
           Generate
         </button>
